@@ -1,0 +1,911 @@
+INFO 2024-10-16 12:59:37,796 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 12:59:53,388 basehttp "GET / HTTP/1.1" 200 2279
+INFO 2024-10-16 13:00:02,103 basehttp "POST /submit/ HTTP/1.1" 200 24
+ERROR 2024-10-16 13:00:12,575 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4313f56998fsm48576525e9.16 - gsmtp')
+INFO 2024-10-16 13:00:12,576 basehttp "POST /submit/ HTTP/1.1" 200 120
+ERROR 2024-10-16 13:00:29,055 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-37d7fa7a256sm4264674f8f.14 - gsmtp')
+INFO 2024-10-16 13:00:29,058 basehttp "POST /submit/ HTTP/1.1" 200 120
+ERROR 2024-10-16 13:03:30,156 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-37d7fc41a15sm4262291f8f.110 - gsmtp')
+INFO 2024-10-16 13:03:30,159 basehttp "POST /submit/ HTTP/1.1" 200 120
+INFO 2024-10-16 13:17:06,803 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 13:17:23,554 basehttp "GET / HTTP/1.1" 200 2279
+INFO 2024-10-16 13:19:28,948 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 13:19:44,503 basehttp "GET /submit HTTP/1.1" 301 0
+INFO 2024-10-16 13:19:44,511 basehttp "GET /submit/ HTTP/1.1" 200 23
+INFO 2024-10-16 13:19:55,622 basehttp "GET /submit/ HTTP/1.1" 200 23
+INFO 2024-10-16 13:20:09,070 basehttp "GET /submit/ HTTP/1.1" 200 23
+WARNING 2024-10-16 13:20:28,326 log Forbidden (CSRF token missing.): /
+WARNING 2024-10-16 13:20:28,326 basehttp "POST / HTTP/1.1" 403 2491
+INFO 2024-10-16 13:22:34,498 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\emails.py changed, reloading.
+INFO 2024-10-16 13:22:35,744 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 13:24:58,823 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 13:25:13,254 basehttp "GET / HTTP/1.1" 200 2279
+ERROR 2024-10-16 13:25:58,670 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-37d7fbf80a4sm4320205f8f.87 - gsmtp')
+INFO 2024-10-16 13:25:58,673 basehttp - Broken pipe from ('127.0.0.1', 54062)
+ERROR 2024-10-16 13:26:01,145 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4313f56ea05sm49287795e9.23 - gsmtp')
+INFO 2024-10-16 13:26:01,147 basehttp "POST /submit/ HTTP/1.1" 200 110
+ERROR 2024-10-16 13:28:15,666 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4313f6b3c72sm49652405e9.35 - gsmtp')
+INFO 2024-10-16 13:28:15,670 basehttp - Broken pipe from ('127.0.0.1', 54087)
+ERROR 2024-10-16 13:28:16,983 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-43153a341a0sm14014435e9.24 - gsmtp')
+INFO 2024-10-16 13:28:16,986 basehttp "POST /submit/ HTTP/1.1" 200 110
+ERROR 2024-10-16 13:28:16,996 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4315003b77bsm23553895e9.11 - gsmtp')
+INFO 2024-10-16 13:28:17,002 basehttp - Broken pipe from ('127.0.0.1', 54094)
+ERROR 2024-10-16 13:28:17,151 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4313f56f241sm49764785e9.22 - gsmtp')
+INFO 2024-10-16 13:28:17,154 basehttp - Broken pipe from ('127.0.0.1', 54084)
+ERROR 2024-10-16 13:28:17,962 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-37d7fc403d3sm4303515f8f.101 - gsmtp')
+INFO 2024-10-16 13:28:17,965 basehttp - Broken pipe from ('127.0.0.1', 54088)
+ERROR 2024-10-16 13:28:20,030 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4313f6b1e42sm49364365e9.35 - gsmtp')
+INFO 2024-10-16 13:28:20,033 basehttp - Broken pipe from ('127.0.0.1', 54091)
+INFO 2024-10-16 15:29:47,618 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 15:29:58,632 autoreload Watching for file changes with StatReloader
+ERROR 2024-10-16 15:31:45,017 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4313f569943sm52167245e9.12 - gsmtp')
+INFO 2024-10-16 15:31:45,021 basehttp "POST /submit/ HTTP/1.1" 200 110
+INFO 2024-10-16 15:32:20,198 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\views.py changed, reloading.
+INFO 2024-10-16 15:32:21,450 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 15:32:35,426 autoreload Watching for file changes with StatReloader
+INFO 2024-10-16 15:33:42,282 basehttp "GET / HTTP/1.1" 200 2279
+ERROR 2024-10-16 15:34:02,009 emails SMTP error occurred while sending email to ifejikavcent18@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-43153d96c81sm16067785e9.46 - gsmtp')
+INFO 2024-10-16 15:34:02,012 basehttp "POST /submit/ HTTP/1.1" 200 118
+INFO 2024-10-17 07:56:45,779 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 07:59:16,763 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:00:55,952 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-10-17 08:00:58,238 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:01:05,110 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-10-17 08:01:06,919 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:01:23,914 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:01:41,981 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:03:38,267 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:04:27,926 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:23:13,309 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:27:50,164 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 08:29:19,737 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\urls.py changed, reloading.
+INFO 2024-10-17 08:29:21,703 autoreload Watching for file changes with StatReloader
+WARNING 2024-10-17 09:08:28,913 log Not Found: / Quit the server with CTRL-BREAK.
+WARNING 2024-10-17 09:08:28,930 basehttp "GET /%20Quit%20the%20server%20with%20CTRL-BREAK. HTTP/1.1" 404 3285
+ERROR 2024-10-17 09:08:55,427 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:08:55,441 basehttp "GET / HTTP/1.1" 500 129764
+ERROR 2024-10-17 09:08:55,887 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:08:55,892 basehttp "GET / HTTP/1.1" 500 129490
+INFO 2024-10-17 09:13:42,046 autoreload Watching for file changes with StatReloader
+ERROR 2024-10-17 09:13:54,841 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:13:54,858 basehttp "GET / HTTP/1.1" 500 129764
+ERROR 2024-10-17 09:13:56,966 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:13:56,973 basehttp "GET / HTTP/1.1" 500 129490
+INFO 2024-10-17 09:21:52,191 autoreload Watching for file changes with StatReloader
+ERROR 2024-10-17 09:22:08,389 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:22:08,399 basehttp "GET / HTTP/1.1" 500 129764
+ERROR 2024-10-17 09:22:09,399 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:22:09,404 basehttp "GET / HTTP/1.1" 500 129490
+ERROR 2024-10-17 09:22:17,208 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:22:17,213 basehttp "GET / HTTP/1.1" 500 129764
+ERROR 2024-10-17 09:22:18,990 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:22:18,998 basehttp "GET / HTTP/1.1" 500 129490
+ERROR 2024-10-17 09:22:26,688 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:22:26,691 basehttp "GET / HTTP/1.1" 500 129764
+ERROR 2024-10-17 09:22:30,262 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 09:22:30,266 basehttp "GET / HTTP/1.1" 500 129490
+INFO 2024-10-17 11:23:34,035 autoreload Watching for file changes with StatReloader
+ERROR 2024-10-17 11:23:52,333 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.socialaccount.context_processors'
+ERROR 2024-10-17 11:23:52,347 basehttp "GET / HTTP/1.1" 500 129490
+INFO 2024-10-17 11:57:55,443 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 11:58:06,315 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-10-17 11:58:08,133 autoreload Watching for file changes with StatReloader
+ERROR 2024-10-17 11:58:19,547 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.account.context_processors'
+ERROR 2024-10-17 11:58:19,554 basehttp "GET / HTTP/1.1" 500 129316
+ERROR 2024-10-17 11:58:21,382 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 253, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'allauth.account.context_processors'
+ERROR 2024-10-17 11:58:21,386 basehttp "GET / HTTP/1.1" 500 129042
+INFO 2024-10-17 12:12:21,086 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 12:12:47,772 basehttp "GET /submit/ HTTP/1.1" 200 23
+INFO 2024-10-17 12:13:07,634 basehttp "GET / HTTP/1.1" 200 2279
+INFO 2024-10-17 12:13:26,542 basehttp "GET / HTTP/1.1" 200 2279
+INFO 2024-10-17 12:28:47,414 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 12:29:01,371 basehttp "GET / HTTP/1.1" 200 2279
+INFO 2024-10-17 12:29:13,160 basehttp "GET / HTTP/1.1" 200 2279
+ERROR 2024-10-17 12:29:17,305 log Internal Server Error: /home/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 11, in home
+    return Httpresponse("welcome to the Home page")
+           ^^^^^^^^^^^^
+NameError: name 'Httpresponse' is not defined. Did you mean: 'HttpResponse'?
+ERROR 2024-10-17 12:29:17,310 basehttp "GET /home/ HTTP/1.1" 500 68807
+INFO 2024-10-17 12:31:12,737 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 12:31:22,380 basehttp "GET /home/ HTTP/1.1" 200 24
+INFO 2024-10-17 12:34:03,856 basehttp "GET / HTTP/1.1" 200 2279
+WARNING 2024-10-17 12:34:29,722 log Not Found: /accounts/social/login/google/
+WARNING 2024-10-17 12:34:29,723 basehttp "GET /accounts/social/login/google/ HTTP/1.1" 404 13627
+ERROR 2024-10-17 12:37:29,394 log Internal Server Error: /accounts/google/login/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'provider_login_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\allauth\socialaccount\providers\oauth2\views.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\allauth\socialaccount\providers\base\views.py", line 16, in dispatch
+    resp = respond_to_login_on_get(request, provider)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\allauth\socialaccount\providers\base\utils.py", line 9, in respond_to_login_on_get
+    return render(
+           ^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'provider_login_url', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2024-10-17 12:37:29,404 basehttp "GET /accounts/google/login/ HTTP/1.1" 500 186425
+INFO 2024-10-17 12:40:56,148 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 12:41:16,278 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 383
+INFO 2024-10-17 12:43:13,360 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:01:55,829 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:02:00,161 basehttp "POST /accounts/login/ HTTP/1.1" 200 3000
+INFO 2024-10-17 13:02:05,918 basehttp "POST /accounts/login/ HTTP/1.1" 200 3008
+INFO 2024-10-17 13:02:12,324 basehttp "POST /accounts/login/ HTTP/1.1" 200 3008
+INFO 2024-10-17 13:02:31,522 basehttp "POST /accounts/login/ HTTP/1.1" 200 3008
+INFO 2024-10-17 13:02:33,085 basehttp "POST /accounts/login/ HTTP/1.1" 200 3008
+INFO 2024-10-17 13:02:33,353 basehttp "POST /accounts/login/ HTTP/1.1" 200 2992
+INFO 2024-10-17 13:02:33,556 basehttp "POST /accounts/login/ HTTP/1.1" 200 2992
+INFO 2024-10-17 13:02:34,081 basehttp "POST /accounts/login/ HTTP/1.1" 200 2992
+INFO 2024-10-17 13:02:34,306 basehttp "POST /accounts/login/ HTTP/1.1" 200 2992
+INFO 2024-10-17 13:03:43,526 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 383
+INFO 2024-10-17 13:03:45,896 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:04:03,317 basehttp "GET /accounts/password/reset/ HTTP/1.1" 200 1784
+INFO 2024-10-17 13:04:06,627 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:10:30,108 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 13:10:42,358 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:10:43,837 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:10:44,066 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:10:44,920 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:10:45,138 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:10:55,990 basehttp "POST /accounts/login/ HTTP/1.1" 200 3008
+INFO 2024-10-17 13:11:00,358 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 383
+INFO 2024-10-17 13:11:01,833 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:11:11,109 basehttp "GET /accounts/facebook/login/?process=login HTTP/1.1" 200 383
+INFO 2024-10-17 13:11:15,801 basehttp "GET /accounts/login/ HTTP/1.1" 200 2850
+INFO 2024-10-17 13:11:23,265 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 200 383
+INFO 2024-10-17 13:19:30,998 autoreload Watching for file changes with StatReloader
+INFO 2024-10-17 13:19:44,309 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2024-10-17 13:19:44,327 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-10-17 13:19:44,555 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2024-10-17 13:19:44,790 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2024-10-17 13:19:44,839 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2024-10-17 13:19:44,867 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2024-10-17 13:19:44,887 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2024-10-17 13:19:44,904 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2024-10-17 13:19:44,955 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2024-10-17 13:19:44,970 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2024-10-17 13:20:06,958 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4340
+INFO 2024-10-17 13:20:30,347 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-10-17 13:20:30,420 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-10-17 13:20:30,459 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2024-10-17 13:20:30,483 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2024-10-17 13:20:30,485 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2024-10-17 13:20:41,214 basehttp "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 13118
+INFO 2024-10-17 13:20:41,266 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8710
+INFO 2024-10-17 13:20:41,310 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-10-17 13:20:41,360 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2024-10-17 13:20:41,380 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-10-17 13:20:41,390 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2024-10-17 13:20:41,393 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2024-10-17 13:20:41,402 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-10-17 13:20:41,445 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-10-17 13:20:41,460 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-10-17 13:20:41,483 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-10-17 13:20:41,603 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-10-17 13:20:41,647 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-10-17 13:20:41,714 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-10-17 13:20:41,777 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2024-10-17 13:22:24,302 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-10-17 13:23:36,874 basehttp "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 13118
+INFO 2024-10-17 13:23:36,907 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-10-17 13:24:18,292 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-10-17 13:24:21,070 basehttp "GET /admin/socialaccount/socialtoken/add/ HTTP/1.1" 200 14561
+INFO 2024-10-17 13:24:21,103 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-10-17 13:24:21,161 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2024-10-17 13:24:21,162 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2024-10-17 13:24:21,260 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2024-10-17 13:24:21,261 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2024-10-17 13:24:37,190 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-10-17 13:27:37,848 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2024-10-17 13:27:37,877 basehttp "GET / HTTP/1.1" 200 2279
+INFO 2024-10-17 13:27:43,740 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2024-10-17 13:27:43,754 basehttp "GET / HTTP/1.1" 200 2279

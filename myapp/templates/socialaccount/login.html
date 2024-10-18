@@ -1,0 +1,24 @@
+{% load socialaccount %}  <!-- This loads the socialaccount template tags -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Account Login</title>
+</head>
+<body>
+    <h1>Login with your Social Account</h1>
+
+    {% if socialaccount_providers %}
+    <ul>
+        {% for provider in socialaccount_providers %}
+        <li><a href="{% provider_login_url provider.id %}">Login with {{ provider.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No social account providers configured.</p>
+    {% endif %}
+
+    <!-- Optionally include regular login as fallback -->
+    <p>Or <a href="{% url 'account_login' %}">Login with Email</a></p>
+</body>
+</html>

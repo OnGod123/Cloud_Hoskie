@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Assuming CSS and JS files are served from a static folder -->
+    <link rel="stylesheet" type="text/css" href="https://yourdomain.com/static/css/styles.css">
+    <script src="https://yourdomain.com/static/js/scripts.js"></script>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form method="post" action="https://yourdomain.com/accounts/login/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="YOUR_CSRF_TOKEN">
+        
+        <!-- Assuming the form fields are rendered here. -->
+        <p><label for="id_login">Email:</label> <input type="text" name="login" id="id_login" required></p>
+        <p><label for="id_password">Password:</label> <input type="password" name="password" id="id_password" required></p>
+        
+        <button type="submit">Log In</button>
+    </form>
+
+    <h2>Or login with</h2>
+    <ul>
+        <!-- Providers' media JS would typically be loaded in the head section or at the end of the body -->
+        <script src="https://yourdomain.com/path/to/provider/media/js"></script>
+
+        <!-- Assuming providers include Facebook, Google, and Instagram -->
+        <li><a href="https://yourdomain.com/accounts/facebook/login/">Facebook</a></li>
+        <li><a href="https://yourdomain.com/accounts/google/login/">Google</a></li>
+        <li><a href="https://yourdomain.com/accounts/instagram/login/">Instagram</a></li>
+    </ul>
+
+    <p><a href="https://yourdomain.com/accounts/password/reset/">Forgot Password?</a></p>
+    <p><a href="https://yourdomain.com/accounts/signup/">Sign Up</a></p>
+</body>
+</html>
