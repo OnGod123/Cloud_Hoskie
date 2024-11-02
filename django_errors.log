@@ -978,3 +978,30 @@ WARNING 2024-10-24 06:48:01,149 log Unauthorized: /login/
 WARNING 2024-10-24 06:48:01,151 basehttp "POST /login/ HTTP/1.1" 401 52
 WARNING 2024-10-24 06:48:05,199 log Unauthorized: /login/
 WARNING 2024-10-24 06:48:05,200 basehttp "POST /login/ HTTP/1.1" 401 52
+INFO 2024-11-02 18:30:55,958 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-02 18:48:21,576 log Not Found: /profile
+WARNING 2024-11-02 18:48:21,699 basehttp "GET /profile HTTP/1.1" 404 4046
+WARNING 2024-11-02 18:48:21,981 log Not Found: /favicon.ico
+WARNING 2024-11-02 18:48:22,042 basehttp "GET /favicon.ico HTTP/1.1" 404 4058
+INFO 2024-11-02 19:49:46,241 autoreload Watching for file changes with StatReloader
+ERROR 2024-11-02 19:50:43,524 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\views.py", line 15, in index
+    return render(request, 'index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+ERROR 2024-11-02 19:50:43,530 basehttp "GET / HTTP/1.1" 500 86381

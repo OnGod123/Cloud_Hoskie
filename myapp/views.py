@@ -12,7 +12,7 @@ def home(request):
 
 def index(request):
     if request.method == 'GET':
-        return render(request, 'index.html')
+        return render(request, 'home.html')
     else:
         return HttpResponse('Invalid request method.')
 
