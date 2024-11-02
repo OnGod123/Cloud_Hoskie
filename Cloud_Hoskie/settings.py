@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-fddj0p!o507bt&ks!j3if344p5snrbi=n4*r9_)8)-=y$i8la(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hoskie.onrender.com']
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -62,8 +61,11 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'rest_framework',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.instagram',
+    'myapp.profile' # Your other custom app
+     
 ]
 
 
@@ -73,10 +75,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-
-ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'  # Default account adapter
-ACCOUNT_LOGOUT_ON_GET = True  # Optional: logout on GET requests
-LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
+LOGIN_REDIRECT_URL = '/home/'  # Redirect to home page after login
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -101,7 +100,7 @@ ROOT_URLCONF = 'Cloud_Hoskie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,7 +108,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+                'allauth.account.context_processors.account',
+                'allauth.socialaccount.context_processors.socialaccount',
             ],
         },
     },
@@ -221,6 +221,13 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -237,11 +244,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'myapp/staticfiles/')
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'myapp/media/') 
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

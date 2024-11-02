@@ -1,6 +1,6 @@
 from django.db import models
 
-class UserProfile(models.Model):
+class User_login(models.Model):
     email = models.EmailField(unique=True)  # Email field (compulsory)
     password = models.CharField(max_length=128)  # Password field (compulsory)
     profile_image = models.ImageField(upload_to='profiles/', blank=True, null=True)  # Image field (optional)
