@@ -1,14 +1,15 @@
 from rest_framework import generics
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, throttle_classes
+from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.core.cache import cache
 from rest_framework.pagination import PageNumberPagination
-from myapp.models import Person
-from .serializers import ProfileSerializer, TweetSerializer, ImageSerializer
-from django.http import JsonResponse
-from django.core.cache import cache
+from myapp.models import Person 
+from myapp.profile.tweet.tweet_models import Tweet  
+from myapp.profile.Image.image_models import Image  # Fixed import statement
+from myapp.profile.video.videos_model import Video  
+from .model_profile import Profile
 import geocoder
 
 def get_client_ip(request):
@@ -48,21 +49,28 @@ def all_user_profiles(request):
         return Response(cached_profiles)
 
     paginator = ProfilePagination()
-    profiles = person.objects.select_related('person').prefetch_related('tweet_set', 'image_set', 'vidoe_set')  # Optimize queries
+    profiles = Profile.objects.prefetch_related('person__tweet_set', 'person__image_set', 'person__video_set')  # Optimize queries
     page = paginator.paginate_queryset(profiles, request)
     response_data = []
 
     for profile in page:
+        # Get the user video from the Profile instance
         user_video = profile.user_video.url if profile.user_video else None
+        
+        # Fetch related tweets and images
         tweets = Tweet.objects.filter(person=profile.person).values()  # Fetch all fields for tweets
         images = Image.objects.filter(person=profile.person).values()  # Fetch all fields for images
+        
+        # Fetch all videos related to the Person
+        person_videos = Video.objects.filter(person=profile.person).values()  # Videos related to the person
 
         profile_data = {
             'username': profile.username,
             'social_media_url': profile.social_media_url,
             'bio': profile.bio,
+            'user_video': user_video,  # Profile's user video
             'profile_picture': profile.profile_picture.url if profile.profile_picture else None,
-            'videos': user_video,
+            'videos': list(person_videos),  # List of videos from the Video table
             'tweets': list(tweets),  # Convert to list
             'images': list(images),  # Convert to list
         }
@@ -83,20 +91,24 @@ def user_profile_by_username(request, username):
         return Response(cached_profile)
 
     profile = get_object_or_404(Profile.objects.select_related('person'), username=username)
-    user_id = profile.person.id
-
+    
     # Fetch user's tweets and images with all fields
-    tweets = Tweet.objects.filter(person__id=user_id).values()
-    images = Image.objects.filter(person__id=user_id).values()
+    tweets = Tweet.objects.filter(person=profile.person).values()
+    images = Image.objects.filter(person=profile.person).values()
 
+    # Get user video from the Profile
     user_video = profile.user_video.url if profile.user_video else None
+
+    # Fetch all videos related to the Person
+    person_videos = Video.objects.filter(person=profile.person).values()  # Videos related to the person
 
     data = {
         'username': profile.username,
         'social_media_url': profile.social_media_url,
         'bio': profile.bio,
         'profile_picture': profile.profile_picture.url if profile.profile_picture else None,
-        'videos': user_video,
+        'user_video': user_video,  # Profile's user video
+        'videos': list(person_videos),  # List of videos from the Video table
         'tweets': list(tweets),  # Convert to list
         'images': list(images),  # Convert to list
     }
@@ -125,24 +137,24 @@ def update_profile(request, username):
             profile.profile_picture = profile_picture
 
         # Save the profile without updating username or social media URL
-        profile.save(update_username=False, update_social_media_url=False)
+        profile.save()
 
         # Clear the cache for this profile
         cache_key = f'user_profile_{username}'
         cache.delete(cache_key)
 
         return JsonResponse({
-            'message': 'Profile updated successfully', 
+            'message': 'Profile updated successfully',
             'profile': {
                 'username': profile.username,
                 'social_media_url': profile.social_media_url,
                 'bio': profile.bio,
                 'profile_picture': profile.profile_picture.url if profile.profile_picture else None,
-                'videos': profile.user_video.url if profile.user_video else None
+                'user_video': profile.user_video.url if profile.user_video else None  # Profile's user video
             }
-        }, status=status.HTTP_200_OK)
+        }, status=200)
 
-    return JsonResponse({'error': 'Invalid request method'}, status=status.HTTP_400_BAD_REQUEST)
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 def serve_profile_view(request, profile_id):
     client_ip = get_client_ip(request)
