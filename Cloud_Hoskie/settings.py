@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.instagram',
+    'django_elasticsearch_dsl',
     'myapp.profile' # Your other custom app
      
 ]
@@ -228,6 +229,13 @@ CACHES = {
     }
 }
 
+# Elasticsearch settings
+# settings.py
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': ['http://localhost:9200'],  # Ensure full URL with protocol (http://)
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

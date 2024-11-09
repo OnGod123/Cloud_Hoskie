@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #results {
+            margin-top: 20px;
+        }
+        #results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .result-item {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .result-item:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Profiles</h1>
+    
+    <!-- Search input field -->
+    <input type="text" id="username_input" placeholder="Search for profiles..." />
+
+    <!-- Container to display results -->
+    <div id="results">
+        <!-- Unordered list will be dynamically populated here -->
+        <ul id="results-list"></ul>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // Trigger search as the user types
+        $('#username_input').on('input', function() {
+            let usernameInput = $(this).val();  // Get the input text
+            let offset = 0;  // Offset for pagination or continuing search results
+            let pageSize = 10;  // Number of results per request
+
+            // AJAX request to get search results
+            $.ajax({
+                url: '/search/',  // URL to the search endpoint
+                data: {
+                    'username_input': usernameInput,  // Search term
+                    'offset': offset,  // Pagination offset (could be enhanced)
+                    'page_size': pageSize  // Number of results per page
+                },
+                dataType: 'json',
+                success: function(data) {
+                    $('#results-list').empty();  // Clear previous results
+
+                    // Check if any results were returned
+                    if (data.results && data.results.length > 0) {
+                        // Loop through each result and display it
+                        data.results.forEach(function(profile) {
+                            $('#results-list').append(
+                                '<li class="result-item">' +
+                                '<strong>' + profile.username + '</strong><br>' +
+                                '<a href="' + profile.social_media_url + '" target="_blank">Social Media</a><br>' +
+                                (profile.user_video ? '<a href="' + profile.user_video + '" target="_blank">User Video</a>' : '') +
+                                '</li>'
+                            );
+                        });
+                    } else {
+                        // Display a message if no results found
+                        $('#results-list').append('<li>No profiles found.</li>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log('Error: ' + error);
+                    $('#results-list').append('<li>Error occurred while fetching data.</li>');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
     path('profile/', include('myapp.profile.urls')),
+    path('search/', include('myapp.elastic_search.urls')),
 ]
-

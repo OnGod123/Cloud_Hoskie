@@ -2476,3 +2476,825 @@ INFO 2024-11-04 14:54:51,114 basehttp "GET /profile/username HTTP/1.1" 301 0
 WARNING 2024-11-04 14:54:51,132 log Not Found: /profile/username/
 WARNING 2024-11-04 14:54:51,133 basehttp "GET /profile/username/ HTTP/1.1" 404 10365
 INFO 2024-11-04 14:57:41,217 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\views.py changed, reloading.
+INFO 2024-11-04 14:57:47,601 autoreload Watching for file changes with StatReloader
+INFO 2024-11-04 14:58:36,299 basehttp "OPTIONS /profile/username/ HTTP/1.1" 200 10660
+WARNING 2024-11-04 14:58:39,523 log Not Found: /profile/username/
+WARNING 2024-11-04 14:58:39,524 basehttp "GET /profile/username/ HTTP/1.1" 404 10365
+INFO 2024-11-04 14:58:41,014 basehttp "OPTIONS /profile/username/ HTTP/1.1" 200 10660
+INFO 2024-11-04 15:16:50,231 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2024-11-04 15:16:54,134 basehttp - Broken pipe from ('127.0.0.1', 58429)
+INFO 2024-11-04 15:16:57,618 basehttp - Broken pipe from ('127.0.0.1', 58430)
+INFO 2024-11-04 15:16:58,387 basehttp - Broken pipe from ('127.0.0.1', 58432)
+INFO 2024-11-04 15:16:58,602 basehttp - Broken pipe from ('127.0.0.1', 58433)
+INFO 2024-11-04 15:16:59,071 basehttp - Broken pipe from ('127.0.0.1', 58434)
+INFO 2024-11-04 15:16:59,222 basehttp - Broken pipe from ('127.0.0.1', 58435)
+INFO 2024-11-04 15:16:59,349 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-11-04 15:16:59,544 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-11-04 15:16:59,711 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2024-11-04 15:16:59,805 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2024-11-04 15:16:59,806 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2024-11-04 15:17:33,294 basehttp "GET /profile/ HTTP/1.1" 200 10223
+INFO 2024-11-04 15:17:33,324 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2024-11-04 15:17:33,338 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2024-11-04 15:17:33,338 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2024-11-04 15:17:33,354 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-11-04 15:17:33,354 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-11-04 15:17:33,354 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2024-11-04 15:17:33,363 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2024-11-04 15:17:33,367 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2024-11-04 15:17:33,375 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-11-04 15:17:33,386 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2024-11-04 15:17:33,389 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2024-11-04 15:17:33,393 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2024-11-04 17:27:33,657 basehttp "GET /profile/update HTTP/1.1" 301 0
+WARNING 2024-11-04 17:27:33,702 log Not Found: /profile/update/
+WARNING 2024-11-04 17:27:33,703 basehttp "GET /profile/update/ HTTP/1.1" 404 10353
+INFO 2024-11-06 03:05:41,362 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2024-11-06 03:05:41,377 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2024-11-06 03:05:41,377 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2024-11-06 03:05:41,381 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2024-11-06 03:05:41,666 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2024-11-06 03:05:41,667 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2024-11-06 03:05:41,679 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-11-06 03:05:41,694 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2024-11-06 03:05:41,728 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2024-11-06 03:05:41,745 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-11-06 03:05:41,780 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-11-06 03:05:41,811 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2024-11-09 00:07:41,631 autoreload Watching for file changes with StatReloader
+INFO 2024-11-09 00:08:16,246 basehttp "GET / HTTP/1.1" 200 0
+INFO 2024-11-09 00:08:28,578 basehttp "GET / HTTP/1.1" 200 0
+INFO 2024-11-09 00:08:59,109 basehttp "GET / HTTP/1.1" 200 0
+INFO 2024-11-09 00:09:08,470 basehttp "GET /search HTTP/1.1" 301 0
+ERROR 2024-11-09 00:09:08,773 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 15, in get_profiles
+    return render(request, 'search.html')  # This will render search.html for the root URL
+           ^^^^^^
+NameError: name 'render' is not defined
+ERROR 2024-11-09 00:09:08,780 basehttp "GET /search/ HTTP/1.1" 500 74355
+ERROR 2024-11-09 00:09:29,099 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 15, in get_profiles
+    return render(request, 'search.html')  # This will render search.html for the root URL
+           ^^^^^^
+NameError: name 'render' is not defined
+ERROR 2024-11-09 00:09:29,106 basehttp "GET /search/ HTTP/1.1" 500 74492
+WARNING 2024-11-09 00:09:49,757 log Not Found: /account/
+WARNING 2024-11-09 00:09:49,759 basehttp "GET /account/ HTTP/1.1" 404 3754
+INFO 2024-11-09 00:10:07,815 basehttp "GET /accounts/google/login/ HTTP/1.1" 200 383
+INFO 2024-11-09 00:10:18,350 basehttp "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2024-11-09 00:10:18,371 basehttp "GET /home/ HTTP/1.1" 200 24
+INFO 2024-11-09 01:10:37,022 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-11-09 01:10:37,216 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2024-11-09 01:10:37,258 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2024-11-09 01:10:37,259 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2024-11-09 01:39:02,151 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py changed, reloading.
+INFO 2024-11-09 01:39:07,137 autoreload Watching for file changes with StatReloader
+INFO 2024-11-09 01:40:00,052 basehttp "GET /search/ HTTP/1.1" 200 3252
+ERROR 2024-11-09 01:40:06,281 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:40:06,292 basehttp "GET /search/?username_input=h&offset=0&page_size=10 HTTP/1.1" 500 92498
+ERROR 2024-11-09 01:40:06,376 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:40:06,379 basehttp "GET /search/?username_input=he&offset=0&page_size=10 HTTP/1.1" 500 92508
+ERROR 2024-11-09 01:40:08,317 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:40:08,324 basehttp "GET /search/?username_input=hel&offset=0&page_size=10 HTTP/1.1" 500 92518
+ERROR 2024-11-09 01:40:08,526 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:40:08,529 basehttp "GET /search/?username_input=hell&offset=0&page_size=10 HTTP/1.1" 500 92528
+ERROR 2024-11-09 01:40:09,943 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:40:09,948 basehttp "GET /search/?username_input=hello&offset=0&page_size=10 HTTP/1.1" 500 92538
+INFO 2024-11-09 01:44:59,104 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-11-09 01:45:02,810 autoreload Watching for file changes with StatReloader
+ERROR 2024-11-09 01:45:37,896 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:37,900 basehttp "GET /search/?username_input=hello%5C&offset=0&page_size=10 HTTP/1.1" 500 92750
+ERROR 2024-11-09 01:45:40,640 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:40,643 basehttp "GET /search/?username_input=hello&offset=0&page_size=10 HTTP/1.1" 500 92723
+ERROR 2024-11-09 01:45:40,761 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:40,764 basehttp "GET /search/?username_input=hell&offset=0&page_size=10 HTTP/1.1" 500 92713
+ERROR 2024-11-09 01:45:41,366 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:41,416 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:41,424 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:41,425 basehttp "GET /search/?username_input=hel&offset=0&page_size=10 HTTP/1.1" 500 92703
+ERROR 2024-11-09 01:45:41,439 basehttp "GET /search/?username_input=he&offset=0&page_size=10 HTTP/1.1" 500 92693
+ERROR 2024-11-09 01:45:41,466 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:41,469 basehttp "GET /search/?username_input=h&offset=0&page_size=10 HTTP/1.1" 500 92683
+ERROR 2024-11-09 01:45:41,480 basehttp "GET /search/?username_input=&offset=0&page_size=10 HTTP/1.1" 500 92673
+ERROR 2024-11-09 01:45:43,255 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:43,265 basehttp "GET /search/?username_input=h&offset=0&page_size=10 HTTP/1.1" 500 92683
+ERROR 2024-11-09 01:45:43,600 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+                                           ~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 116, in get_connection
+    raise KeyError(f"There is no connection with alias {alias!r}.")
+KeyError: "There is no connection with alias 'default'."
+ERROR 2024-11-09 01:45:43,607 basehttp "GET /search/?username_input=hi&offset=0&page_size=10 HTTP/1.1" 500 92693
+INFO 2024-11-09 01:50:09,037 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-11-09 01:50:12,752 autoreload Watching for file changes with StatReloader
+INFO 2024-11-09 01:51:17,961 basehttp "GET /search/ HTTP/1.1" 200 3252
+ERROR 2024-11-09 01:51:25,962 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 88, in create_connection
+    conn = self._conns[alias] = self.elasticsearch_class(**kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\__init__.py", line 336, in __init__
+    node_configs = client_node_configs(
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 110, in client_node_configs
+    node_configs = hosts_to_node_configs(hosts)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 148, in hosts_to_node_configs
+    return hosts_to_node_configs([hosts])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 156, in hosts_to_node_configs
+    node_configs.append(url_to_node_config(host))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\client_utils.py", line 215, in url_to_node_config
+    raise ValueError(
+ValueError: URL must include a 'scheme', 'host', and 'port' component (ie 'https://localhost:9200')
+ERROR 2024-11-09 01:51:25,987 basehttp "GET /search/?username_input=g&offset=0&page_size=10 HTTP/1.1" 500 123475
+ERROR 2024-11-09 01:51:27,935 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 83, in execute
+    es = get_connection(self._using)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 113, in get_connection
+    return self.create_connection(alias, **self._kwargs[alias])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\connections.py", line 88, in create_connection
+    conn = self._conns[alias] = self.elasticsearch_class(**kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\__init__.py", line 336, in __init__
+    node_configs = client_node_configs(
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 110, in client_node_configs
+    node_configs = hosts_to_node_configs(hosts)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 148, in hosts_to_node_configs
+    return hosts_to_node_configs([hosts])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 156, in hosts_to_node_configs
+    node_configs.append(url_to_node_config(host))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\client_utils.py", line 215, in url_to_node_config
+    raise ValueError(
+ValueError: URL must include a 'scheme', 'host', and 'port' component (ie 'https://localhost:9200')
+ERROR 2024-11-09 01:51:27,939 basehttp "GET /search/?username_input=gr&offset=0&page_size=10 HTTP/1.1" 500 123485
+INFO 2024-11-09 01:52:53,969 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-11-09 01:52:57,635 autoreload Watching for file changes with StatReloader
+INFO 2024-11-09 01:53:21,357 basehttp "GET /search/ HTTP/1.1" 200 3252
+ERROR 2024-11-09 01:53:25,704 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 88, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 446, in wrapped
+    return api(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\__init__.py", line 4149, in search
+    return self.perform_request(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\_base.py", line 271, in perform_request
+    response = self._perform_request(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\_base.py", line 316, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))
+ERROR 2024-11-09 01:53:25,705 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 24, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\Cloud_Hoskie\myapp\elastic_search\views.py", line 48, in autocomplete_username_search
+    results = query.execute()
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch_dsl\_sync\search.py", line 88, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\utils.py", line 446, in wrapped
+    return api(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\__init__.py", line 4149, in search
+    return self.perform_request(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\_base.py", line 271, in perform_request
+    response = self._perform_request(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elasticsearch\_sync\client\_base.py", line 316, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vincent\AppData\Local\Programs\Python\Python312\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))
+ERROR 2024-11-09 01:53:25,720 basehttp "GET /search/?username_input=be&offset=0&page_size=10 HTTP/1.1" 500 227178
+ERROR 2024-11-09 01:53:25,733 basehttp "GET /search/?username_input=b&offset=0&page_size=10 HTTP/1.1" 500 227153
+INFO 2024-11-09 05:55:56,655 basehttp "GET /admin/ HTTP/1.1" 200 9820
+INFO 2024-11-09 06:54:15,460 autoreload Watching for file changes with StatReloader
+INFO 2024-11-09 07:03:45,980 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-11-09 07:03:49,946 autoreload Watching for file changes with StatReloader
+INFO 2024-11-09 07:04:36,737 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2024-11-09 07:04:39,897 autoreload Watching for file changes with StatReloader
