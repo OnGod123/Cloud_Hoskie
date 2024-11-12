@@ -7961,3 +7961,13 @@ elasticsearch.AuthenticationException: AuthenticationException(401, 'security_ex
 ERROR 2024-11-09 20:03:21,780 basehttp "GET /search/?username_input=h&offset=0&page_size=10 HTTP/1.1" 500 127067
 ERROR 2024-11-09 20:03:21,780 basehttp "GET /search/?username_input=hhh&offset=0&page_size=10 HTTP/1.1" 500 127099
 ERROR 2024-11-09 20:03:21,793 basehttp "GET /search/?username_input=hh&offset=0&page_size=10 HTTP/1.1" 500 127083
+INFO 2024-11-12 10:12:01,315 autoreload Watching for file changes with StatReloader
+INFO 2024-11-12 10:14:55,413 autoreload Watching for file changes with StatReloader
+INFO 2024-11-12 10:16:30,973 autoreload Watching for file changes with StatReloader
+INFO 2024-11-12 10:16:57,829 basehttp "GET /logout HTTP/1.1" 301 0
+INFO 2024-11-12 10:16:57,835 basehttp "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-11-12 10:16:58,095 basehttp "GET /accounts/login/?next=/logout/ HTTP/1.1" 200 2984
+WARNING 2024-11-12 10:16:58,225 log Not Found: /favicon.ico
+WARNING 2024-11-12 10:16:58,226 basehttp "GET /favicon.ico HTTP/1.1" 404 3913
+INFO 2024-11-12 10:19:07,342 basehttp "GET /accounts/instagram/login/?process=login&next=%2Flogout%2F HTTP/1.1" 200 383
+INFO 2024-11-12 10:19:26,781 basehttp "GET /accounts/login/?next=/logout/ HTTP/1.1" 200 2984
