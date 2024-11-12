@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+from elasticsearch_dsl import connections
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -229,13 +229,35 @@ CACHES = {
     }
 }
 
-# Elasticsearch settings
-# settings.py
+
+# Elasticsearch configuration
 ELASTICSEARCH_DSL = {
     'default': {
-        'hosts': ['http://localhost:9200'],  # Ensure full URL with protocol (http://)
-    },
+        'hosts': ['https://58749e6b2df24d64b31c5b1519e66fc0.us-central1.gcp.cloud.es.io:443'],
+        'http_auth': ('api_key', 'qJXeeYaRS-Cwq9PMkvwHRw'),
+	  'timeout': 60  
+    }
 }
+
+# Extra parameters (these are not part of the Elasticsearch connection, but can be used elsewhere)
+ELASTICSEARCH_EXTRA_PARAMS = {
+    "id": "Ia1FEJMBTnNGv7LPQV_r",
+    "name": "vincent",
+    "api_key": "qJXeeYaRS-Cwq9PMkvwHRw",
+    "encoded": "SWExRkVKTUJUbk5HdjdMUFFWX3I6cUpYZWVZYVJTLUN3cTlQTWt2d0hSdw==",
+    "beats_logstash_format": "Ia1FEJMBTnNGv7LPQV_r:qJXeeYaRS-Cwq9PMkvwHRw"
+}
+
+
+connections.configure(
+    default={
+        'hosts': ['https://58749e6b2df24d64b31c5b1519e66fc0.us-central1.gcp.cloud.es.io:443'],  # Your Elasticsearch endpoint
+        'http_auth': ('api_key', 'SzYwbEVaTUJUbk5HdjdMUFRWOU46bXRtUmI5MkdRcDZUeU9hcjk5V2pUQQ=='),  # New API key
+        'timeout': 30  # Optional: increase timeout if necessary
+    }
+)
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
