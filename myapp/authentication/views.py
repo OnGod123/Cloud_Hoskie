@@ -15,12 +15,19 @@ def login_view(request):
     
     if request.method == 'POST':
         try:
-            email = request.POST.get('email')
+            username_or_email = request.POST.get('username_or_email')  # Field for either username or email
             password = request.POST.get('password')
-            profile_image_data = request.POST.get('profile_image')  # Get the base64 image data
+            profile_image_data = request.POST.get('profile_image')  # Base64 image data (optional)
 
-            # Verify user credentials
-            person = Person.objects.filter(email=email).first()
+            # Try to find the user by username or email
+            person = None
+
+            # Check if the input is a username or email and filter accordingly
+            if '@' in username_or_email:
+                person = Person.objects.filter(email=username_or_email).first()
+            else:
+                person = Person.objects.filter(username=username_or_email).first()
+
             if person and person.check_password(password):
                 # Log in user
                 user_login, created = User_login.objects.get_or_create(person=person)
@@ -30,7 +37,7 @@ def login_view(request):
                     # Decode the base64 image
                     format, imgstr = profile_image_data.split(';base64,')  # Split out the metadata
                     ext = format.split('/')[-1]  # Extract file extension
-                    filename = f"profiles/{person.name}_{person.email}.{ext}"  # Create unique filename
+                    filename = f"profiles/{person.name}_{person.username}.{ext}"  # Create unique filename
 
                     # Save the image to the media directory
                     image_content = ContentFile(base64.b64decode(imgstr), name=filename)
@@ -54,8 +61,6 @@ def login_view(request):
                         return JsonResponse({'success': False, 'message': 'Image verification failed'}, status=403)
 
                 user_login.start_session()  # Start session
-                
-                # Save user profile
                 user_login.save()
 
                 # Redirect to the home page after successful login

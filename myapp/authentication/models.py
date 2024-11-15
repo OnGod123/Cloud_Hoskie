@@ -1,10 +1,11 @@
 from django.db import models
-
+from myapp.models import Person
 class User_login(models.Model):
+    username = models.CharField(max_length=150, unique=True, default='default_username') 
     email = models.EmailField(unique=True)  # Email field (compulsory)
     password = models.CharField(max_length=128)  # Password field (compulsory)
     profile_image = models.ImageField(upload_to='profiles/', blank=True, null=True)  # Image field (optional)
-    person = models.OneToOneField('myapp.Person', on_delete=models.CASCADE)  # Use string notation to avoid import issues
+    person = models.OneToOneField('Person', on_delete=models.CASCADE)  # Use string notation to avoid import issues
     verified = models.BooleanField(default=False)  # Verified field (not compulsory)
     login_count = models.IntegerField(default=0)  # Track login attempts
     session_active = models.BooleanField(default=False)  # Track if the session is active

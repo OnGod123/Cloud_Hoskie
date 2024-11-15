@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Messaging</title>
+</head>
+<body>
+    <h1>Voice Messaging</h1>
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+
+    <script>
+        const username = "{{ username|default:'undefined' }}";  // Will show 'undefined' if username is empty
+        const recipientUsername = "{{ recipientUsername|default:'undefined' }}";  // Will show 'undefined' if recipient is empty
+
+        // If both values are properly set:
+       
+        console.log(`username: ${username}, recipientUsername: ${recipientUsername}`);
+        const signalingChannel = new WebSocket(`ws://localhost:8000/ws/webrtc/${username}/${recipientUsername}/`);
+        const configuration = { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] };
+        let peerConnection = null; // Ensure peerConnection is initialized as null
+        let localStream = null; // Ensure localStream is initialized as null
+
+        signalingChannel.onmessage = async (event) => {
+            const message = JSON.parse(event.data);
+
+            if (message.answer && peerConnection) {
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(message.answer));
+            } else if (message.iceCandidate && peerConnection) {
+                try {
+                    await peerConnection.addIceCandidate(new RTCIceCandidate(message.iceCandidate));
+                } catch (e) {
+                    console.error('Error adding received ice candidate', e);
+                }
+            } else if (message.offer) {
+                if (peerConnection) {
+                    peerConnection.close(); // Close any existing connection
+                    peerConnection = null;
+                }
+
+                peerConnection = new RTCPeerConnection(configuration);
+
+                peerConnection.addEventListener('icecandidate', event => {
+                    if (event.candidate) {
+                        signalingChannel.send(JSON.stringify({
+                            type: 'candidate',
+                            data: event.candidate
+                        }));
+                    }
+                });
+
+                peerConnection.ontrack = (event) => {
+                    const [remoteStream] = event.streams;
+                    document.getElementById('remoteVideo').srcObject = remoteStream;
+                };
+
+                peerConnection.addEventListener('connectionstatechange', () => {
+                    if (peerConnection.connectionState === 'connected') {
+                        signalingChannel.send(JSON.stringify({
+                            type: 'notification',
+                            data: 'connected'
+                        }));
+                    }
+                });
+
+                try {
+                    localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                    document.getElementById('localVideo').srcObject = localStream;
+
+                    localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+                    await peerConnection.setRemoteDescription(new RTCSessionDescription(message.offer));
+                    const answer = await peerConnection.createAnswer();
+                    await peerConnection.setLocalDescription(answer);
+                    signalingChannel.send(JSON.stringify({
+                        type: 'answer',
+                        data: answer
+                    }));
+                } catch (err) {
+                    console.error('Error accessing media devices or creating answer:', err);
+                }
+            } else if (message.notification === 'connected') {
+                if (navigator.vibrate) {
+                    navigator.vibrate([200, 100, 200]);
+                }
+                console.log('Connection established, device vibrated!');
+            }
+        };
+
+        async function makeCall() {
+            if (peerConnection) {
+                peerConnection.close(); // Close any existing connection before making a new call
+                peerConnection = null;
+            }
+
+            peerConnection = new RTCPeerConnection(configuration);
+
+            peerConnection.addEventListener('icecandidate', event => {
+                if (event.candidate) {
+                    signalingChannel.send(JSON.stringify({
+                        type: 'candidate',
+                        data: event.candidate
+                    }));
+                }
+            });
+
+            peerConnection.ontrack = (event) => {
+                const [remoteStream] = event.streams;
+                document.getElementById('remoteVideo').srcObject = remoteStream;
+            };
+
+            try {
+                localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                document.getElementById('localVideo').srcObject = localStream;
+
+                localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+                const offer = await peerConnection.createOffer();
+                await peerConnection.setLocalDescription(offer);
+
+                signalingChannel.send(JSON.stringify({
+                    type: 'offer',
+                    data: offer
+                }));
+            } catch (err) {
+                console.error('Error starting the call or accessing media devices:', err);
+            }
+        }
+    </script>
+</body>
+</html>
