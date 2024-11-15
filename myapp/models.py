@@ -28,7 +28,7 @@ class Person(models.Model):
     )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    username = models.CharField(max_length=255, unique=True)
+    username = models.CharField(max_length=255, unique=True, default='default_username')
     name = models.CharField(max_length=60)
     relationship_status = models.CharField(max_length=15, choices=RELATIONSHIP_CHOICES)
     sexual_orientation = models.CharField(max_length=10, choices=SEXUAL_ORIENTATION_CHOICES)
