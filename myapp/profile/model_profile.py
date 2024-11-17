@@ -5,7 +5,7 @@ from myapp.models import Person
 class Profile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    username = models.CharField(max_length=30, unique=True)
+    username = models.CharField(max_length=30)
     user_video = models.URLField(blank=True)
     social_media_url = models.URLField(blank=True)
     bio = models.TextField(blank=True)

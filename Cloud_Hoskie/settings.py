@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-fddj0p!o507bt&ks!j3if344p5snrbi=n4*r9_)8)-=y$i8la(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver']
 
 
 # Application definition
@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
     'django.contrib.sites',  # Corrected string
     'allauth',
     'allauth.account',
@@ -65,9 +64,16 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.instagram',
     'django_elasticsearch_dsl',
-    'myapp.profile' # Your other custom app
-     
+    'myapp.profile',# Your other custom app
+    'channels',
+    'myapp.apps.MyappConfig',
+    'myapp.video_call',
+    'corsheaders', 
 ]
+
+
+ASGI_APPLICATION = 'myapp.asgi.application'
+
 
 
 SITE_ID = 1
@@ -93,6 +99,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -157,6 +164,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "ifejikav4@gmail.com"
 EMAIL_HOST_PASSWORD = "#allonGod123"
 DEFAULT_FROM_EMAIL = "ifejikav4@gmail.com"
+
 
 
 
@@ -258,11 +266,24 @@ connections.configure(
 )
 
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',  # Use InMemoryChannelLayer for in-memory storage
+    },
+}
 
+# ASGI application (ensure it's set up for ASGI)
+ASGI_APPLICATION = 'myapp.asgi.application'  # Replace with your project's ASGI application path
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",  # Add the domains you want to allow
+    "http://127.0.0.1:8000",
+    "http://example.com",  # Add other domains as necessary
+]
 
 TIME_ZONE = 'UTC'
 

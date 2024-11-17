@@ -23,4 +23,5 @@ urlpatterns = [
     path('profile/', include('myapp.profile.urls')),
     path('search/', include('myapp.elastic_search.urls')),
     path('logout/', include('myapp.logout.urls')),
+    path('video-call/', include('myapp.video_call.urls')),
 ]

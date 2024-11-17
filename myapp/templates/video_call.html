@@ -12,36 +12,69 @@
         const username = "{{ username|default:'undefined' }}";  // Will show 'undefined' if username is empty
         const recipientUsername = "{{ recipientUsername|default:'undefined' }}";  // Will show 'undefined' if recipient is empty
 
-        // If both values are properly set:
-       
         console.log(`username: ${username}, recipientUsername: ${recipientUsername}`);
-        const signalingChannel = new WebSocket(`ws://localhost:8000/ws/webrtc/${username}/${recipientUsername}/`);
+        const ws = new WebSocket(`ws://localhost:8000/ws/webrtc/${username}/${recipientUsername}/`);
         const configuration = { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] };
         let peerConnection = null; // Ensure peerConnection is initialized as null
         let localStream = null; // Ensure localStream is initialized as null
 
-        signalingChannel.onmessage = async (event) => {
+        // Debugging WebSocket connection
+        ws.onopen = () => {
+            console.log('WebSocket connection established');
+        };
+
+        ws.onclose = (event) => {
+            console.log('WebSocket connection closed', event);
+        };
+
+        ws.onerror = (error) => {
+            console.error('WebSocket error:', error);
+        };
+	
+	ws.onerror = (error) => {
+           console.error('WebSocket error:', error);
+           console.log('Error details:', JSON.stringify(error));
+        };
+
+        ws.onmessage = async (event) => {
+            console.log('WebSocket message received:', event.data); // Debugging the incoming message
             const message = JSON.parse(event.data);
 
-            if (message.answer && peerConnection) {
+            if (message.type === 'ping') {
+                console.log("Received ping message:", message);
+                // Respond to the ping with a pong message
+                ws.send(JSON.stringify({
+                    type: 'pong',
+                    data: message.data  // Echo the ping data if needed
+                }));
+            } else if (message.type === 'pong') {
+                console.log("Received pong message:", message);
+                // Handle the pong message if needed
+            } else if (message.answer && peerConnection) {
+                console.log('Setting remote description with answer');
                 await peerConnection.setRemoteDescription(new RTCSessionDescription(message.answer));
             } else if (message.iceCandidate && peerConnection) {
                 try {
+                    console.log('Adding received ICE candidate:', message.iceCandidate);
                     await peerConnection.addIceCandidate(new RTCIceCandidate(message.iceCandidate));
                 } catch (e) {
                     console.error('Error adding received ice candidate', e);
                 }
             } else if (message.offer) {
+                console.log('Received offer:', message.offer);
                 if (peerConnection) {
                     peerConnection.close(); // Close any existing connection
                     peerConnection = null;
+                    console.log('Existing peer connection closed');
                 }
 
                 peerConnection = new RTCPeerConnection(configuration);
+                console.log('New RTCPeerConnection created');
 
                 peerConnection.addEventListener('icecandidate', event => {
                     if (event.candidate) {
-                        signalingChannel.send(JSON.stringify({
+                        console.log('Sending ICE candidate to WebSocket:', event.candidate);
+                        ws.send(JSON.stringify({
                             type: 'candidate',
                             data: event.candidate
                         }));
@@ -49,13 +82,15 @@
                 });
 
                 peerConnection.ontrack = (event) => {
+                    console.log('Received remote track');
                     const [remoteStream] = event.streams;
                     document.getElementById('remoteVideo').srcObject = remoteStream;
                 };
 
                 peerConnection.addEventListener('connectionstatechange', () => {
+                    console.log('Peer connection state changed:', peerConnection.connectionState);
                     if (peerConnection.connectionState === 'connected') {
-                        signalingChannel.send(JSON.stringify({
+                        ws.send(JSON.stringify({
                             type: 'notification',
                             data: 'connected'
                         }));
@@ -64,6 +99,7 @@
 
                 try {
                     localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                    console.log('Local stream obtained');
                     document.getElementById('localVideo').srcObject = localStream;
 
                     localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
@@ -71,7 +107,7 @@
                     await peerConnection.setRemoteDescription(new RTCSessionDescription(message.offer));
                     const answer = await peerConnection.createAnswer();
                     await peerConnection.setLocalDescription(answer);
-                    signalingChannel.send(JSON.stringify({
+                    ws.send(JSON.stringify({
                         type: 'answer',
                         data: answer
                     }));
@@ -81,22 +117,27 @@
             } else if (message.notification === 'connected') {
                 if (navigator.vibrate) {
                     navigator.vibrate([200, 100, 200]);
+                    console.log('Device vibrated upon connection');
                 }
                 console.log('Connection established, device vibrated!');
             }
         };
 
         async function makeCall() {
+            console.log('Attempting to make a call');
             if (peerConnection) {
                 peerConnection.close(); // Close any existing connection before making a new call
                 peerConnection = null;
+                console.log('Existing peer connection closed');
             }
 
             peerConnection = new RTCPeerConnection(configuration);
+            console.log('New RTCPeerConnection created for the call');
 
             peerConnection.addEventListener('icecandidate', event => {
                 if (event.candidate) {
-                    signalingChannel.send(JSON.stringify({
+                    console.log('Sending ICE candidate to WebSocket:', event.candidate);
+                    ws.send(JSON.stringify({
                         type: 'candidate',
                         data: event.candidate
                     }));
@@ -104,20 +145,23 @@
             });
 
             peerConnection.ontrack = (event) => {
+                console.log('Received remote track');
                 const [remoteStream] = event.streams;
                 document.getElementById('remoteVideo').srcObject = remoteStream;
             };
 
             try {
                 localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                console.log('Local stream obtained for the call');
                 document.getElementById('localVideo').srcObject = localStream;
 
                 localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
 
                 const offer = await peerConnection.createOffer();
+                console.log('Offer created:', offer);
                 await peerConnection.setLocalDescription(offer);
 
-                signalingChannel.send(JSON.stringify({
+                ws.send(JSON.stringify({
                     type: 'offer',
                     data: offer
                 }));
