@@ -10,7 +10,8 @@ def voice_call_view(request, recipient):
     recipient_user = get_object_or_404(User, username=recipient)
 
     # Get the authenticated user's username
-    authenticated_user = request.user.username
+    #authenticated_user = request.user.username
+    authenticated_user = 'vincent'
     print(f"Authenticated user: {authenticated_user}")
     print(f"Recipient username: {recipient_user.username}")
 
@@ -18,4 +19,4 @@ def voice_call_view(request, recipient):
     return render(request, 'video_call.html', {
         'username': authenticated_user,  # Pass authenticated user's username
         'recipientUsername': recipient_user.username  # Pass recipient's username
-})
+    })
