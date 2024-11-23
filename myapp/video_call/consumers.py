@@ -26,25 +26,6 @@ class SimpleWebSocketConsumer(AsyncWebsocketConsumer):
         pass
 
 
-
-class SimpleWebSocketConsumer(AsyncWebsocketConsumer):
-    async def connect(self):
-        # Accept the WebSocket connection
-        await self.accept()
-
-        # Send a simple message to the client
-        await self.send(text_data=json.dumps({
-            'message': 'Connection successful!'
-        }))
-
-    async def disconnect(self, close_code):
-        # This will be called when the WebSocket closes
-        print(f'Connection closed with code {close_code}')
-
-    async def receive(self, text_data):
-        # This will handle any message sent from the client
-        pass
-
 class WebRTCConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         # Extract usernames from the URL route
@@ -81,15 +62,11 @@ class WebRTCConsumer(AsyncWebsocketConsumer):
 
     async def disconnect(self, close_code):
         # Update the VideoCall status to 'ended' when the WebSocket disconnects
-        try:
-            # Ensure the update is awaited since sync_to_async returns a coroutine
-            await sync_to_async(VideoCall.objects.filter)(
-                initiator__username=self.initiator_username,
-                recipient__username=self.recipient_username,
-                status='active'
-            ).update(end_time=timezone.now(), status='ended')
-        except VideoCall.DoesNotExist:
-            pass  # Handle any edge cases where the call record is not found
+        await sync_to_async(VideoCall.objects.filter(
+            initiator__username=self.initiator_username,
+            recipient__username=self.recipient_username,
+            status='active'
+        ).update)(end_time=timezone.now(), status='ended')
 
         # Cancel the ping task when disconnecting
         if hasattr(self, 'ping_task'):
@@ -135,13 +112,12 @@ class WebRTCConsumer(AsyncWebsocketConsumer):
     async def send_ping(self):
         while True:
             try:
-                # Ensure we're not sending messages after the connection has been closed
-                if self.channel_name in self.application_channel_names:
-                    await self.send(text_data=json.dumps({
-                        'type': 'ping',
-                        'data': 'ping'  # Customize this payload if needed
-                    }))
+                # Send periodic ping messages
+                await self.send(text_data=json.dumps({
+                    'type': 'ping',
+                    'data': 'ping'  # Customize this payload if needed
+                }))
                 await asyncio.sleep(10)  # Ping every 10 seconds
-            except (Disconnected, RuntimeError):
-                # Handle the case when WebSocket is closed or some other runtime error
+            except asyncio.CancelledError:
+                # Stop sending pings when the WebSocket connection is closed
                 break

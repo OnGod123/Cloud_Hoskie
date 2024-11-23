@@ -7,6 +7,7 @@
     <h1>Voice Messaging</h1>
     <video id="localVideo" autoplay muted></video>
     <video id="remoteVideo" autoplay></video>
+    <div id="statusMessage"></div> <!-- Add a div to show status messages -->
 
     <script>
         const username = "{{ username|default:'undefined' }}";  // Will show 'undefined' if username is empty
@@ -21,19 +22,21 @@
         // Debugging WebSocket connection
         ws.onopen = () => {
             console.log('WebSocket connection established');
+            // Hide status message when WebSocket is open
+            document.getElementById('statusMessage').textContent = '';
         };
 
         ws.onclose = (event) => {
             console.log('WebSocket connection closed', event);
+            // Notify the user if WebSocket closes unexpectedly (e.g., recipient offline)
+            document.getElementById('statusMessage').textContent = 'User is not online. Please try again later.';
         };
 
         ws.onerror = (error) => {
             console.error('WebSocket error:', error);
-        };
-	
-	ws.onerror = (error) => {
-           console.error('WebSocket error:', error);
-           console.log('Error details:', JSON.stringify(error));
+            console.log('Error details:', JSON.stringify(error));
+            // If WebSocket has an error, assume the user is offline
+            document.getElementById('statusMessage').textContent = 'User is not online. Please try again later.';
         };
 
         ws.onmessage = async (event) => {

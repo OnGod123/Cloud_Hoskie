@@ -8740,3 +8740,36 @@ INFO 2024-11-17 13:56:05,985 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/
 INFO 2024-11-17 13:56:05,989 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:58272]
 INFO 2024-11-17 13:56:06,004 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:58272]
 INFO 2024-11-17 14:31:29,906 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 14:31:57,616 runserver [mHTTP GET /video-call/markjones/ 200 [0.05, 127.0.0.1:60481][0m
+INFO 2024-11-17 14:31:58,061 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/markjones/ [127.0.0.1:60485]
+INFO 2024-11-17 14:31:58,067 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:60485]
+INFO 2024-11-17 14:31:58,088 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:60485]
+INFO 2024-11-19 16:45:27,637 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 16:45:57,859 runserver [mHTTP GET /video-call/markjones/ 200 [0.67, 127.0.0.1:64121][0m
+INFO 2024-11-19 16:45:58,251 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/markjones/ [127.0.0.1:64125]
+INFO 2024-11-19 16:45:58,255 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64125]
+INFO 2024-11-19 16:45:58,264 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64125]
+INFO 2024-11-19 16:50:42,379 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\video_call\consumers.py changed, reloading.
+INFO 2024-11-19 16:50:47,128 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 16:51:33,838 runserver [mHTTP GET /video-call/markjones/ 200 [0.06, 127.0.0.1:64457][0m
+INFO 2024-11-19 16:51:34,275 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/markjones/ [127.0.0.1:64461]
+INFO 2024-11-19 16:51:34,278 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64461]
+INFO 2024-11-19 16:51:34,287 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64461]
+INFO 2024-11-19 16:53:37,641 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\video_call\consumers.py changed, reloading.
+INFO 2024-11-19 16:53:41,785 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 16:56:02,148 runserver [mHTTP GET /video-call/markjones/ 200 [0.06, 127.0.0.1:64642][0m
+INFO 2024-11-19 16:56:02,506 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/markjones/ [127.0.0.1:64645]
+INFO 2024-11-19 16:56:02,518 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64645]
+INFO 2024-11-19 16:56:02,536 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64645]
+INFO 2024-11-19 16:56:03,689 runserver [mHTTP GET /video-call/markjones/ 200 [0.02, 127.0.0.1:64642][0m
+INFO 2024-11-19 16:56:03,921 runserver [mHTTP GET /video-call/markjones/ 200 [0.02, 127.0.0.1:64642][0m
+INFO 2024-11-19 16:56:04,263 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/markjones/ [127.0.0.1:64649]
+INFO 2024-11-19 16:56:04,265 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64649]
+INFO 2024-11-19 16:56:04,272 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64649]
+INFO 2024-11-19 16:56:04,336 runserver [mHTTP GET /video-call/markjones/ 200 [0.02, 127.0.0.1:64642][0m
+INFO 2024-11-19 16:56:04,541 runserver [mHTTP GET /video-call/markjones/ 200 [0.02, 127.0.0.1:64642][0m
+INFO 2024-11-19 16:56:04,875 runserver WebSocket HANDSHAKING /ws/webrtc/vincent/markjones/ [127.0.0.1:64653]
+INFO 2024-11-19 16:56:04,880 runserver WebSocket CONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64653]
+INFO 2024-11-19 16:56:04,887 runserver WebSocket DISCONNECT /ws/webrtc/vincent/markjones/ [127.0.0.1:64653]
+INFO 2024-11-19 16:58:38,700 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\video_call\consumers.py changed, reloading.
+INFO 2024-11-19 16:58:43,192 autoreload Watching for file changes with StatReloader
