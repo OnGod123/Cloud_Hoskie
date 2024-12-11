@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Tweet</title>
+</head>
+<body>
+    <h1>Post a Tweet</h1>
+    <form id="tweetForm" method="POST" action="/tweet/">
+        {% csrf_token %}
+        <textarea id="tweetContent" name="content" placeholder="What's happening?" required></textarea><br>
+        
+        <input type="text" id="mentions" name="mentions" placeholder="Mentions (e.g., @username)"><br>
+        <input type="text" id="trends" name="trends" placeholder="Trends (e.g., #hashtag)"><br>
+        
+        <!-- Assuming you have the person ID available in context -->
+        <input type="hidden" name="person_id" value="{{ person.id }}">
+        
+        <button type="submit">Post Tweet</button>
+    </form>
+
+    <div id="tweetPreview">
+        <p><strong>Preview:</strong></p>
+        <p id="tweetTextPreview"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to highlight @mentions and #trends in tweet content
+            function highlightTags(content) {
+                const mentionRegex = /(@\w+)/g;
+                const trendRegex = /(#\w+)/g;
+
+                // Highlight @mentions
+                content = content.replace(mentionRegex, '<span class="mention">$1</span>');
+                // Highlight #trends
+                content = content.replace(trendRegex, '<span class="trend">$1</span>');
+
+                return content;
+            }
+
+            // Update tweet preview with highlighted mentions and trends
+            $('#tweetContent').on('input', function() {
+                var content = $(this).val();
+                var highlightedContent = highlightTags(content);
+                $('#tweetTextPreview').html(highlightedContent);
+            });
+
+            // Submit tweet via form
+            $('#tweetForm').on('submit', function(event) {
+                event.preventDefault();
+
+                var content = $('#tweetContent').val();
+                var mentions = content.match(/(@\w+)/g) || [];  // Get all mentions
+                var trends = content.match(/(#\w+)/g) || [];  // Get all trends
+
+                // Send tweet data to the backend
+                $.ajax({
+                    url: '/tweet/',  // Use the same URL to handle form submission
+                    method: 'POST',
+                    data: {
+                        content: content,
+                        mentions: mentions.join(', '),
+                        trends: trends.join(', '),
+                        person_id: "{{ person.id }}",  // Dynamic user ID
+                    },
+                    success: function(response) {
+                        alert('Tweet posted successfully!');
+                        // Optionally reset form or redirect
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error posting tweet: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

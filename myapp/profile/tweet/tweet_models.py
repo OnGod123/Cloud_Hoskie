@@ -1,8 +1,11 @@
-from django.db import models 
-from myapp.models import Person  
+from django.db import models
+from myapp.models import Person
+
 class Tweet(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)  # Reference to Person
     content = models.TextField()  # Content of the tweet
+    mentions = models.TextField(blank=True, null=True)  # Store mentions (@username)
+    trends = models.TextField(blank=True, null=True)  # Store trends (#hashtag)
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp of when the tweet was created
     updated_at = models.DateTimeField(auto_now=True)
 
