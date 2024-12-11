@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Management</title>
+</head>
+<body>
+    <h1>Video Management</h1>
+
+    <!-- Section for Uploading Videos -->
+    <h2>Upload Video</h2>
+    <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/video/upload/">
+        {% csrf_token %}
+        <input type="file" name="video_file" accept="video/*" required>
+        <input type="text" name="title" placeholder="Video Title" required>
+        <input type="hidden" name="person_id" value="1"> <!-- Example person ID -->
+        <button type="submit">Upload Video</button>
+    </form>
+
+    <!-- Section for Capturing Videos -->
+    <h2>Capture Video</h2>
+    <button id="startCapture">Start Capture</button>
+    <video id="videoPreview" controls autoplay></video>
+    <form id="captureForm" method="POST" action="/video/capture/" style="display:none;">
+        {% csrf_token %}
+        <input type="hidden" name="person_id" value="1"> <!-- Example person ID -->
+        <input type="hidden" name="video_data" id="capturedVideo">
+        <input type="text" name="title" placeholder="Video Title" required>
+        <button type="submit">Save Captured Video</button>
+    </form>
+
+    <script>
+        // Capture video using the device's camera
+        const startCapture = () => {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    const mediaRecorder = new MediaRecorder(stream);
+                    const chunks = [];
+
+                    mediaRecorder.ondataavailable = event => chunks.push(event.data);
+
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(chunks, { type: 'video/mp4' });
+                        const videoURL = URL.createObjectURL(blob);
+
+                        // Preview the captured video
+                        const videoPreview = document.getElementById('videoPreview');
+                        videoPreview.src = videoURL;
+
+                        // Prepare video for submission
+                        const capturedVideoInput = document.getElementById('capturedVideo');
+                        capturedVideoInput.value = videoURL; // Add URL or Base64 if required
+
+                        const captureForm = document.getElementById('captureForm');
+                        captureForm.style.display = 'block';
+                    };
+
+                    mediaRecorder.start();
+
+                    setTimeout(() => {
+                        mediaRecorder.stop();
+                        stream.getTracks().forEach(track => track.stop());
+                    }, 5000); // Capture for 5 seconds
+                })
+                .catch(error => console.error('Error accessing media devices:', error));
+        };
+
+        // Add event listener to the Start Capture button
+        document.getElementById('startCapture').addEventListener('click', startCapture);
+    </script>
+</body>
+</html>
