@@ -290,6 +290,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+VIDEO_URL = '/video/'
+VIDEO_ROOT = os.path.join(MEDIA_ROOT, 'videos')
+
+IMAGE_URL = '/image/'
+IMAGE_ROOT = os.path.join(MEDIA_ROOT, 'images')
 
 
 # Static files (CSS, JavaScript, Images)

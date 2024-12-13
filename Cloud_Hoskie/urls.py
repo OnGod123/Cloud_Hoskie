@@ -24,4 +24,10 @@ urlpatterns = [
     path('search/', include('myapp.elastic_search.urls')),
     path('logout/', include('myapp.logout.urls')),
     path('video-call/', include('myapp.video_call.urls')),
+    path('video/', include('myapp.profile.video.urls')),
+    path('image/', include('myapp.profile.Image.urls'))
 ]
+
+if settings.DEBUG:
+     urlpatterns += static(settings.VIDEO_URL, document_root=settings.VIDEO_ROOT)
+     urlpatterns += static(settings.IMAGE_URL, document_root=settings.IMAGE_ROOT)
