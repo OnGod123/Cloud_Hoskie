@@ -47,11 +47,10 @@ def get_es_connection_fallback():
     """
     try:
         # Fallback to direct Elasticsearch connection (using hardcoded credentials)
-        es = Elasticsearch(
-            ['https://58749e6b2df24d64b31c5b1519e66fc0.us-central1.gcp.cloud.es.io:443'],
-            http_auth=('api_key', ELASTICSEARCH_EXTRA_PARAMS['api_key']),
-            timeout=30  # You can adjust the timeout if needed
-        )
+        es =  Elasticsearch(
+            ['http://localhost:9200'],  # Localhost connection
+           timeout=30  # Adjust the timeout if needed
+          )
 
         # Check if the connection is successful
         if es.ping():
