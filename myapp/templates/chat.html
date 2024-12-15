@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with {{ recipientUsername }}</title>
+    <style>
+        #messageContainer {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        #localVideo, #remoteVideo {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        #sendMessageButton {
+            margin-top: 10px;
+        }
+        #statusMessage {
+            font-size: 1.2em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with {{ recipientUsername }}</h1>
+
+    <div id="chat-box">
+        <!-- Displaying the chat messages -->
+        {% for message in messages %}
+            <div class="message">
+                <strong>{{ message.sender.username }}:</strong>
+                <p>{{ message.content }}</p>
+                <span>{{ message.timestamp }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Typing indicator -->
+    {% if typing_indicator %}
+        <div id="typing-status">
+            {{ recipientUsername }} is typing...
+        </div>
+    {% endif %}
+
+    <div id="statusMessage"></div> <!-- Status message for connection or errors -->
+    <div id="messageContainer"></div> <!-- Container to display received messages -->
+    
+    <!-- Video elements -->
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+
+    <form action="{% url 'send_message' chat_session.id %}" method="POST">
+        {% csrf_token %}
+        <textarea name="message" placeholder="Type your message..."></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Input field and button to send messages -->
+    <input type="text" id="messageInput" placeholder="Type a message" />
+    <button id="sendMessageButton">Send Message</button>
+
+    <button id="startCallButton">Start Call</button> <!-- Button to start a video call -->
+
+    <script>
+        const username = "{{ username|default:'undefined' }}";  // Will show 'undefined' if username is empty
+        const recipientUsername = "{{ recipientUsername|default:'undefined' }}";  // Will show 'undefined' if recipient is empty
+
+        console.log(`username: ${username}, recipientUsername: ${recipientUsername}`);
+        const ws = new WebSocket(`ws://localhost:8000/ws/messaging/${username}/${recipientUsername}/`);
+        
+        const configuration = { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] };
+        let peerConnection = null; 
+        let localStream = null;
+
+        // WebSocket connection established
+        ws.onopen = () => {
+            console.log('WebSocket connection established');
+            document.getElementById('statusMessage').textContent = 'Connection established with the recipient.';
+        };
+
+        // WebSocket closed unexpectedly
+        ws.onclose = (event) => {
+            console.log('WebSocket connection closed', event);
+            document.getElementById('statusMessage').textContent = 'Connection closed unexpectedly. Please try again later.';
+        };
+
+        // WebSocket error occurred
+        ws.onerror = (error) => {
+            console.error('WebSocket error:', error);
+            document.getElementById('statusMessage').textContent = 'An error occurred. Please try again later.';
+        };
+
+        // Handle incoming WebSocket messages
+        ws.onmessage = async (event) => {
+            try {
+                console.log('Message received:', event.data);
+                const message = JSON.parse(event.data);
+
+                if (message.type === 'text') {
+                    // Handle text message
+                    displayMessage(message.sender, message.data);
+                } else if (message.type === 'ping') {
+                    // Respond to ping with a pong message
+                    console.log("Received ping message:", message);
+                    ws.send(JSON.stringify({
+                        type: 'pong',
+                        data: message.data
+                    }));
+                } else if (message.type === 'pong') {
+                    // Handle pong message if needed
+                    console.log("Received pong message:", message);
+                } else if (message.type === 'notification') {
+                    // Handle notifications (e.g., connection established)
+                    console.log("Notification received:", message);
+                    document.getElementById('statusMessage').textContent = 'Notification: ' + message.data;
+                } else if (message.offer && !peerConnection) {
+                    // Handle received offer
+                    console.log('Received offer:', message.offer);
+                    peerConnection = new RTCPeerConnection(configuration);
+                    await handleOffer(message.offer);
+                } else if (message.answer && peerConnection) {
+                    // Handle received answer
+                    console.log('Received answer:', message.answer);
+                    await peerConnection.setRemoteDescription(new RTCSessionDescription(message.answer));
+                } else if (message.iceCandidate && peerConnection) {
+                    // Handle received ICE candidate
+                    console.log('Received ICE candidate:', message.iceCandidate);
+                    try {
+                        await peerConnection.addIceCandidate(new RTCIceCandidate(message.iceCandidate));
+                    } catch (err) {
+                        console.error('Error adding ICE candidate:', err);
+                    }
+                } else {
+                    console.warn('Unknown message type:', message.type);
+                }
+            } catch (error) {
+                console.error('Error handling WebSocket message:', error);
+                document.getElementById('statusMessage').textContent = 'Error processing the received message.';
+            }
+        };
+
+        // Function to send a text message to the recipient
+        async function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const messageText = messageInput.value;
+
+            if (messageText.trim()) {
+                const message = {
+                    type: 'text',
+                    data: messageText
+                };
+
+                try {
+                    console.log('Sending message:', messageText);
+                    ws.send(JSON.stringify(message));
+                    displayMessage('You', messageText);
+                    messageInput.value = ''; // Clear the input field after sending
+                } catch (error) {
+                    console.error('Error sending message:', error);
+                    document.getElementById('statusMessage').textContent = 'Error sending message. Please try again.';
+                }
+            }
+        }
+
+        // Function to display a received message in the message container
+        function displayMessage(sender, message) {
+            const messageContainer = document.getElementById('messageContainer');
+            const messageElement = document.createElement('div');
+            messageElement.textContent = `${sender}: ${message}`;
+            messageContainer.appendChild(messageElement);
+        }
+
+        // Attach event listener to send message button
+        document.getElementById('sendMessageButton').addEventListener('click', sendMessage);
+
+        // Function to start a call
+        async function startCall() {
+            if (peerConnection) {
+                peerConnection.close(); // Close existing connection if any
+                peerConnection = null;
+            }
+
+            peerConnection = new RTCPeerConnection(configuration);
+
+            peerConnection.addEventListener('icecandidate', event => {
+                if (event.candidate) {
+                    console.log('Sending ICE candidate:', event.candidate);
+                    ws.send(JSON.stringify({
+                        type: 'candidate',
+                        data: event.candidate
+                    }));
+                }
+            });
+
+            peerConnection.ontrack = (event) => {
+                const [remoteStream] = event.streams;
+                document.getElementById('remoteVideo').srcObject = remoteStream;
+            };
+
+            try {
+                localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                document.getElementById('localVideo').srcObject = localStream;
+                localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+                const offer = await peerConnection.createOffer();
+                await peerConnection.setLocalDescription(offer);
+
+                // Send the offer to the recipient
+                ws.send(JSON.stringify({
+                    type: 'offer',
+                    data: offer
+                }));
+            } catch (err) {
+                console.error('Error starting call:', err);
+            }
+        }
+
+        // Handle received offer
+        async function handleOffer(offer) {
+            try {
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
+
+                const answer = await peerConnection.createAnswer();
+                await peerConnection.setLocalDescription(answer);
+
+                // Send the answer back to the sender
+                ws.send(JSON.stringify({
+                    type: 'answer',
+                    data: answer
+                }));
+            } catch (err) {
+                console.error('Error handling offer:', err);
+            }
+        }
+
+        // Attach event listener to start call button
+        document.getElementById('startCallButton').addEventListener('click', startCall);
+    </script>
+</body>
+</html>
