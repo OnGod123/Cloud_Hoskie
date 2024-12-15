@@ -68,11 +68,13 @@ INSTALLED_APPS = [
     'channels',
     'myapp.apps.MyappConfig',
     'myapp.video_call',
+    'myapp.chat',
     'corsheaders', 
 ]
 
 
 ASGI_APPLICATION = 'myapp.asgi.application'
+ASGI_APPLICATION = 'myapp.chat.asgi.application'
 
 
 
@@ -240,21 +242,14 @@ CACHES = {
 
 # Elasticsearch configuration
 ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': ['https://58749e6b2df24d64b31c5b1519e66fc0.us-central1.gcp.cloud.es.io:443'],
-        'http_auth': ('api_key', 'qJXeeYaRS-Cwq9PMkvwHRw'),
-	  'timeout': 60  
+     'default': {
+        'hosts': ['http://127.0.0.1:9200'],  # Localhost and default Elasticsearch port
+        'timeout': 60  # Optional timeout
     }
 }
 
 # Extra parameters (these are not part of the Elasticsearch connection, but can be used elsewhere)
-ELASTICSEARCH_EXTRA_PARAMS = {
-    "id": "Ia1FEJMBTnNGv7LPQV_r",
-    "name": "vincent",
-    "api_key": "qJXeeYaRS-Cwq9PMkvwHRw",
-    "encoded": "SWExRkVKTUJUbk5HdjdMUFFWX3I6cUpYZWVZYVJTLUN3cTlQTWt2d0hSdw==",
-    "beats_logstash_format": "Ia1FEJMBTnNGv7LPQV_r:qJXeeYaRS-Cwq9PMkvwHRw"
-}
+ELASTICSEARCH_EXTRA_PARAMS = {}
 
 
 connections.configure(

@@ -25,6 +25,7 @@ urlpatterns = [
     path('logout/', include('myapp.logout.urls')),
     path('video-call/', include('myapp.video_call.urls')),
     path('video/', include('myapp.profile.video.urls')),
+    path('chat/', include('myapp.chat.urls'),
     path('image/', include('myapp.profile.Image.urls'))
 ]
 
