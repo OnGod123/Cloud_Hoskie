@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>File Upload via WebSocket</h1>
+    <button id="uploadFileButton">Upload File</button>
+    <div id="messages"></div>
+
+    <script>
+        const socket = new WebSocket(`ws://${window.location.host}/ws/upload_file/`);
+
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            const messagesDiv = document.getElementById('messages');
+            const messageElement = document.createElement('p');
+            messageElement.textContent = data.message;
+            messagesDiv.appendChild(messageElement);
+        };
+
+        document.getElementById('uploadFileButton').addEventListener('click', () => {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '*';  // Accept all file types
+            fileInput.click();
+
+            fileInput.onchange = () => {
+                const file = fileInput.files[0];
+                socket.send(JSON.stringify({
+                    type: 'file',
+                    file_name: file.name,
+                }));
+                alert(`File "${file.name}" uploaded`);
+            };
+        });
+    </script>
+</body>
+</html>

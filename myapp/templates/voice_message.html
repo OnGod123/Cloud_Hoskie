@@ -1,0 +1,89 @@
+``html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with {{ recipientUsername }}</title>
+    <style>
+        #messageContainer {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        #localVideo, #remoteVideo {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        #sendMessageButton {
+            margin-top: 10px;
+        }
+        #statusMessage {
+            font-size: 1.2em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with {{ recipientUsername }}</h1>
+
+    <div id="messageContainer"></div>
+    <textarea id="messageInput" placeholder="Type a message"></textarea>
+    <button id="sendMessageButton">Send</button>
+
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+    <button id="startCallButton">Start Call</button>
+    <button id="uploadVoiceMessage">Upload Voice Message</button>
+
+    <script>
+        const username = "{{ username }}";
+        const recipientUsername = "{{ recipientUsername }}";
+
+        // WebSocket connection
+        const ws = new WebSocket(`ws://localhost:8000/ws/messaging/${username}/${recipientUsername}/`);
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.type === 'text') {
+                const messageContainer = document.getElementById('messageContainer');
+                const div = document.createElement('div');
+                div.textContent = `${data.sender}: ${data.message}`;
+                messageContainer.appendChild(div);
+            }
+        };
+
+        document.getElementById('sendMessageButton').addEventListener('click', () => {
+            const input = document.getElementById('messageInput');
+            const message = input.value;
+            ws.send(JSON.stringify({ type: 'text', data: message }));
+            input.value = '';
+        });
+
+        // Voice message upload
+        document.getElementById('uploadVoiceMessage').addEventListener('click', () => {
+            const formData = new FormData();
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'audio/*';
+            fileInput.click();
+
+            fileInput.onchange = async () => {
+                const file = fileInput.files[0];
+                formData.append('voice_file', file);
+                formData.append('recipient_id', '{{ recipient.id }}');
+
+                try {
+                    const response = await fetch('/upload_voice_message/', {
+                        method: 'POST',
+                        body: formData,
+                    });
+                    const result = await response.json();
+                    alert(result.message);
+                } catch (error) {
+                    console.error('Error uploading voice message:', error);
+                }
+            };
+        });
+    </script>
+</body>

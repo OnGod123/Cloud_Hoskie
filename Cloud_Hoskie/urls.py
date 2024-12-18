@@ -27,6 +27,9 @@ urlpatterns = [
     path('video/', include('myapp.profile.video.urls')),
     path('chat/', include('myapp.chat.urls'),
     path('Tweet/', include('myapp.Tweet.urls'),
+    path('Voice_messaging/', Include('myapp.Voice_message.urls'),
+    path('live_app/', include('live_go.urls')),
+    path(" ", imclude('file.upload.urls')),
     path('image/', include('myapp.profile.Image.urls'))
 ]
 
