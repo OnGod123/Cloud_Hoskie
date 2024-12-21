@@ -28,6 +28,9 @@ SECRET_KEY = 'django-insecure-fddj0p!o507bt&ks!j3if344p5snrbi=n4*r9_)8)-=y$i8la(
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver']
+PAYSTACK_PUBLIC_KEY = "your_public_key_here"
+PAYSTACK_SECRET_KEY = "your_secret_key_here"
+
 
 
 # Application definition

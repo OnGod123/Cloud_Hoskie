@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const commentsContainer = document.getElementById("comments-container");
+            const commentInputForm = document.getElementById("comment-form");
+            const tweetId = commentInputForm.dataset.tweetId;
+
+            // Load initial comments
+            const commentsData = {{ comments | safe }};
+            commentsData.forEach(comment => appendCommentToPage(comment));
+
+            // Handle form submission
+            commentInputForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const commentInput = document.getElementById("comment-input");
+                const content = commentInput.value.trim();
+                if (!content) return alert("Comment cannot be empty!");
+
+                const newComment = {
+                    comment_id: Date.now(), // Temporary ID for frontend
+                    content,
+                    created_at: new Date().toISOString(),
+                    person_name: "{{ comment_input.person_name }}",
+                    person_image: "{{ comment_input.person_image }}"
+                };
+
+                // Append the new comment to the page
+                appendCommentToPage(newComment);
+
+                // Send the new comment to the backend
+                fetch(`/comments/${tweetId}/`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ content })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to post comment");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Update comment ID with backend response
+                        newComment.comment_id = data.comment_id;
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert("Failed to save the comment. Please try again.");
+                    });
+
+                // Clear the input field
+                commentInput.value = "";
+            });
+
+            // Append a comment to the page
+            function appendCommentToPage(comment) {
+                const commentElement = document.createElement("div");
+                commentElement.className = "comment";
+                commentElement.innerHTML = `
+                    <div class="comment-header">
+                        <img src="${comment.person_image}" alt="${comment.person_name}" class="comment-avatar">
+                        <span class="comment-author">${comment.person_name}</span>
+                    </div>
+                    <p class="comment-content">${comment.content}</p>
+                    <span class="comment-time">${new Date(comment.created_at).toLocaleString()}</span>
+                `;
+                commentsContainer.appendChild(commentElement);
+            }
+        });
+    </script>
+    <style>
+        .comment { border-bottom: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+        .comment-header { display: flex; align-items: center; margin-bottom: 5px; }
+        .comment-avatar { width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; }
+        .comment-author { font-weight: bold; margin-right: 10px; }
+        .comment-time { font-size: 0.85em; color: gray; }
+    </style>
+</head>
+<body>
+    <div id="comments-container"></div>
+
+    <form id="comment-form" data-tweet-id="{{ comment_input.tweet_id }}">
+        <input
+            type="text"
+            id="comment-input"
+            placeholder="{{ comment_input.placeholder }}"
+            value="{{ comment_input.comment }}"
+            required>
+        <button type="submit">Post Comment</button>
+    </form>
+</body>
+</html>

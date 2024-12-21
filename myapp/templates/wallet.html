@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Initiate {{ payment_type|title }}</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Initiate {{ payment_type|title }}</h1>
+    <div id="error" style="color: red; display: none;"></div>
+    <form id="paymentForm" method="POST">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" required>
+
+        <button type="submit">Proceed</button>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#paymentForm').on('submit', function (e) {
+                e.preventDefault();
+                const formData = $(this).serialize();
+                const errorDiv = $('#error');
+                errorDiv.hide();
+
+                $.post(window.location.href, formData, function (response) {
+                    if (response.payment && response.payment.redirect_url) {
+                        window.location.href = response.payment.redirect_url;
+                    } else {
+                        errorDiv.text('Failed to initiate payment. Please try again.').show();
+                    }
+                }).fail(function (xhr) {
+                    let errorMessage = 'An unexpected error occurred.';
+                    if (xhr.responseJSON && xhr.responseJSON.error) {
+                        errorMessage = xhr.responseJSON.error;
+                    }
+                    errorDiv.text(errorMessage).show();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

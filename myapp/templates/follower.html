@@ -1,0 +1,28 @@
+<button id="follow-button" data-person-id="{{ person.id }}">
+    Follow
+</button>
+
+<script>
+    document.getElementById("follow-button").addEventListener("click", function() {
+        const personId = this.getAttribute("data-person-id");
+
+        fetch(`/persons/${personId}/follow/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({}),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.following) {
+                alert(data.message);  // Show success message
+                this.innerText = "Unfollow";  // Change button text to Unfollow
+            } else {
+                alert(data.message);  // Show success message
+                this.innerText = "Follow";  // Change button text to Follow
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>

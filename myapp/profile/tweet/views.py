@@ -1,50 +1,64 @@
-from django.shortcuts import render
 from django.http import JsonResponse
-from django.core.exceptions import ObjectDoesNotExist
-from .models import Tweet
-from myapp.models import Person
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
+import json
+import re
 
-# This view handles both GET and POST requests for the tweet submission form
+@csrf_exempt
 def tweet_view(request):
     if request.method == "GET":
-        # Render the form HTML for submitting a tweet
-        return render(request, 'tweet_form.html')
+        # Fetch all tweets along with their related person data
+        tweets = Tweet.objects.select_related('person').all()
+
+        # Render tweets in the HTML template
+        return render(request, 'tweets.html', {'tweets': tweets})
 
     elif request.method == "POST":
-        # Handle tweet submission
-        content = request.POST.get('content')
-        if not content:
-            return JsonResponse({'error': 'Content is required'}, status=400)
-
-        # Ensure 'person_id' is provided and is a valid integer
-        person_id = request.POST.get('person_id')
-        if not person_id or not person_id.isdigit():
-            return JsonResponse({'error': 'Valid person_id is required'}, status=400)
-
-        # Retrieve the person from the database
         try:
-            person = Person.objects.get(id=person_id)
-        except ObjectDoesNotExist:
-            return JsonResponse({'error': 'Person not found'}, status=404)
-        except Exception as e:
-            return JsonResponse({'error': f'Error retrieving person: {str(e)}'}, status=500)
+            # Parse the JSON body from the request
+            body = json.loads(request.body)
 
-        # Optional fields: mentions and trends
-        mentions = request.POST.get('mentions', '')  # e.g. "@ahmed, @john"
-        trends = request.POST.get('trends', '')  # e.g. "#olympic, #sports"
+            # Extract required fields
+            tweet_id = body.get('tweet_id')
+            updated_content = body.get('content')
 
-        # Save the tweet in the database
-        try:
-            tweet = Tweet.objects.create(
-                person=person,
-                content=content,
-                mentions=mentions,
-                trends=trends
-            )
-        except Exception as e:
-            return JsonResponse({'error': f'Error saving tweet: {str(e)}'}, status=500)
+            if not tweet_id or not updated_content:
+                return JsonResponse({'error': 'Tweet ID and content are required'}, status=400)
 
-        # Success response
-        return JsonResponse({'message': 'Tweet created successfully', 'tweet_id': tweet.id})
+            # Find the tweet to update
+            try:
+                tweet = Tweet.objects.get(id=tweet_id)
+            except Tweet.DoesNotExist:
+                return JsonResponse({'error': 'Tweet not found'}, status=404)
 
-    return JsonResponse({'error': 'Invalid request method'}, status=400)
+            # Update the tweet content
+            tweet.content = updated_content
+
+            # Extract mentions and trends from the updated content
+            mentions = ', '.join(re.findall(r'@\w+', updated_content))
+            trends = ', '.join(re.findall(r'#\w+', updated_content))
+            tweet.mentions = mentions
+            tweet.trends = trends
+            tweet.save()
+
+            # Return updated tweet data
+            return JsonResponse({
+                'message': 'Tweet updated successfully',
+                'tweet': {
+                    'id': tweet.id,
+                    'content': tweet.content,
+                    'mentions': tweet.mentions,
+                    'trends': tweet.trends,
+                    'created_at': tweet.created_at,
+                    'updated_at': tweet.updated_at,
+                    'person': {
+                        'name': tweet.person.name,
+                        'uservideo': tweet.person.uservideo,
+                    }
+                }
+            }, status=200)
+
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)

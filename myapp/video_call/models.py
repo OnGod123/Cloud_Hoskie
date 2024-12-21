@@ -1,5 +1,6 @@
 from django.db import models
 from myapp.models import Person
+
 class VideoCall(models.Model):
     STATUS_CHOICES = [
         ('active', 'Active'),

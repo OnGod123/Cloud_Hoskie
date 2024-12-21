@@ -1,0 +1,28 @@
+<button id="like-button" data-tweet-id="{{ tweet.id }}">
+    Like
+</button>
+
+<script>
+    document.getElementById("like-button").addEventListener("click", function() {
+        const tweetId = this.getAttribute("data-tweet-id");
+
+        fetch(`/tweets/${tweetId}/like/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({}),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.liked) {
+                alert(data.message);  // Show success message
+                this.innerText = "Unlike";  // Change button text
+            } else {
+                alert(data.message);  // Show success message
+                this.innerText = "Like";  // Change button text
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>

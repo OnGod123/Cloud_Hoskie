@@ -3,75 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Tweet</title>
+    <title>Tweets</title>
+    <style>
+        .mention { color: blue; font-weight: bold; }
+        .trend { color: green; font-weight: bold; }
+    </style>
 </head>
 <body>
-    <h1>Post a Tweet</h1>
-    <form id="tweetForm" method="POST" action="/tweet/">
-        {% csrf_token %}
-        <textarea id="tweetContent" name="content" placeholder="What's happening?" required></textarea><br>
-        
-        <input type="text" id="mentions" name="mentions" placeholder="Mentions (e.g., @username)"><br>
-        <input type="text" id="trends" name="trends" placeholder="Trends (e.g., #hashtag)"><br>
-        
-        <!-- Assuming you have the person ID available in context -->
-        <input type="hidden" name="person_id" value="{{ person.id }}">
-        
-        <button type="submit">Post Tweet</button>
-    </form>
+    <h1>Tweets</h1>
+    <div id="tweetsContainer">
+        {% for tweet in tweets %}
+        <div class="tweet" id="tweet-{{ tweet.id }}">
+            <p>
+                <strong>{{ tweet.person.name }}</strong>: 
+                {{ tweet.content }}
+            </p>
+            {% if tweet.person.uservideo %}
+            <video controls width="300">
+                <source src="{{ tweet.person.uservideo }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% endif %}
+            <p>
+                {% if tweet.mentions %} Mentions: <span class="mention">{{ tweet.mentions }}</span>{% endif %}
+                {% if tweet.trends %} Trends: <span class="trend">{{ tweet.trends }}</span>{% endif %}
+            </p>
+            <small>Created at: {{ tweet.created_at }}</small>
 
-    <div id="tweetPreview">
-        <p><strong>Preview:</strong></p>
-        <p id="tweetTextPreview"></p>
+            <!-- Update form -->
+            <form class="updateForm" data-tweet-id="{{ tweet.id }}">
+                <textarea name="content" rows="3" placeholder="Update this tweet...">{{ tweet.content }}</textarea>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+        <hr>
+        {% endfor %}
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Function to highlight @mentions and #trends in tweet content
-            function highlightTags(content) {
-                const mentionRegex = /(@\w+)/g;
-                const trendRegex = /(#\w+)/g;
+        document.addEventListener('DOMContentLoaded', () => {
+            const forms = document.querySelectorAll('.updateForm');
 
-                // Highlight @mentions
-                content = content.replace(mentionRegex, '<span class="mention">$1</span>');
-                // Highlight #trends
-                content = content.replace(trendRegex, '<span class="trend">$1</span>');
+            forms.forEach(form => {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
 
-                return content;
-            }
+                    // Get the tweet ID and content
+                    const tweetId = form.getAttribute('data-tweet-id');
+                    const content = form.querySelector('textarea').value;
 
-            // Update tweet preview with highlighted mentions and trends
-            $('#tweetContent').on('input', function() {
-                var content = $(this).val();
-                var highlightedContent = highlightTags(content);
-                $('#tweetTextPreview').html(highlightedContent);
-            });
+                    // Send the updated data via POST request
+                    const response = await fetch('', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ tweet_id: tweetId, content: content }),
+                    });
 
-            // Submit tweet via form
-            $('#tweetForm').on('submit', function(event) {
-                event.preventDefault();
+                    if (response.ok) {
+                        const data = await response.json();
 
-                var content = $('#tweetContent').val();
-                var mentions = content.match(/(@\w+)/g) || [];  // Get all mentions
-                var trends = content.match(/(#\w+)/g) || [];  // Get all trends
+                        // Update the content dynamically in the DOM
+                        const tweetDiv = document.getElementById(`tweet-${tweetId}`);
+                        tweetDiv.querySelector('p').innerHTML = `<strong>${data.tweet.person.name}</strong>: ${data.tweet.content}`;
 
-                // Send tweet data to the backend
-                $.ajax({
-                    url: '/tweet/',  // Use the same URL to handle form submission
-                    method: 'POST',
-                    data: {
-                        content: content,
-                        mentions: mentions.join(', '),
-                        trends: trends.join(', '),
-                        person_id: "{{ person.id }}",  // Dynamic user ID
-                    },
-                    success: function(response) {
-                        alert('Tweet posted successfully!');
-                        // Optionally reset form or redirect
-                    },
-                    error: function(xhr, status, error) {
-                        alert('Error posting tweet: ' + error);
+                        // Optionally, update mentions and trends
+                        const mentionsSpan = tweetDiv.querySelector('.mention');
+                        const trendsSpan = tweetDiv.querySelector('.trend');
+
+                        if (mentionsSpan) {
+                            mentionsSpan.textContent = data.tweet.mentions;
+                        }
+                        if (trendsSpan) {
+                            trendsSpan.textContent = data.tweet.trends;
+                        }
+
+                        alert('Tweet updated successfully!');
+                    } else {
+                        alert('Failed to update the tweet.');
                     }
                 });
             });

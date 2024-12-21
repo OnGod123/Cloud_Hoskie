@@ -1,6 +1,3 @@
-from django.db import models
-from myapp.models import Person
-
 class Tweet(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)  # Reference to Person
     content = models.TextField()  # Content of the tweet
@@ -11,3 +8,8 @@ class Tweet(models.Model):
 
     def __str__(self):
         return f"{self.person.name}'s Tweet: {self.content[:20]}"
+
+    @property
+    def person_uservideo(self):
+        """Fetch the `uservideo` from the linked Person."""
+        return self.person.uservideo
