@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Tweets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .trend-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .trend-item {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .trend-item:hover {
+            background-color: #e0e0e0;
+        }
+        .tweet-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tweet-item {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .tweet-content {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .tweet-author {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Trending Topics</h1>
+    <ul id="trend-list" class="trend-list">
+        <!-- Trending topics will be loaded here -->
+    </ul>
+
+    <h2>Tweets for Trend</h2>
+    <ul id="tweet-list" class="tweet-list">
+        <!-- Tweets will be loaded here -->
+    </ul>
+
+    <script>
+        // Function to fetch top trends from the backend
+        async function fetchTopTrends() {
+            try {
+                const response = await fetch('/trends/');
+                const data = await response.json();
+                const trendList = document.getElementById('trend-list');
+                trendList.innerHTML = ''; // Clear the list before appending new items
+
+                data.top_trends.forEach(trend => {
+                    const trendItem = document.createElement('li');
+                    trendItem.classList.add('trend-item');
+                    trendItem.textContent = `${trend.trend} (${trend.count} tweets)`;
+                    trendItem.addEventListener('click', () => fetchTweetsForTrend(trend.trend));
+                    trendList.appendChild(trendItem);
+                });
+            } catch (error) {
+                console.error('Error fetching top trends:', error);
+            }
+        }
+
+        // Function to fetch tweets for a specific trend
+        async function fetchTweetsForTrend(trend) {
+            try {
+                const response = await fetch(`/trends/${trend}/`);
+                const data = await response.json();
+                const tweetList = document.getElementById('tweet-list');
+                tweetList.innerHTML = ''; // Clear the list before appending new tweets
+
+                if (data.tweets && data.tweets.length > 0) {
+                    data.tweets.forEach(tweet => {
+                        const tweetItem = document.createElement('li');
+                        tweetItem.classList.add('tweet-item');
+
+                        const tweetContent = document.createElement('p');
+                        tweetContent.classList.add('tweet-content');
+                        tweetContent.textContent = tweet.content;
+
+                        const tweetAuthor = document.createElement('div');
+                        tweetAuthor.classList.add('tweet-author');
+                        tweetAuthor.textContent = `By: ${tweet.person__name}`;
+
+                        tweetItem.appendChild(tweetContent);
+                        tweetItem.appendChild(tweetAuthor);
+                        tweetList.appendChild(tweetItem);
+                    });
+                } else {
+                    tweetList.innerHTML = '<li>No tweets found for this trend.</li>';
+                }
+            } catch (error) {
+                console.error('Error fetching tweets for trend:', error);
+            }
+        }
+
+        // Fetch top trends on page load
+        fetchTopTrends();
+    </script>
+
+</body>
+</html>

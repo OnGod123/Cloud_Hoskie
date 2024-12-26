@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Tweets</title>
+    <style>
+        /* Same CSS from the previous example */
+    </style>
+</head>
+<body>
+
+    <h1>Top Mentions</h1>
+    <ul id="mention-list" class="mention-list">
+        <!-- Mentions will be loaded here -->
+    </ul>
+
+    <h2>Tweets for Mention</h2>
+    <ul id="tweet-list" class="tweet-list">
+        <!-- Tweets will be loaded here -->
+    </ul>
+
+    <script>
+        // Function to fetch top mentions from the backend
+        async function fetchTopMentions() {
+            try {
+                const response = await fetch('/mentions/');
+                const data = await response.json();
+                const mentionList = document.getElementById('mention-list');
+                mentionList.innerHTML = ''; // Clear the list before appending new items
+
+                data.top_mentions.forEach(mention => {
+                    const mentionItem = document.createElement('li');
+                    mentionItem.classList.add('mention-item');
+                    mentionItem.textContent = `@${mention.mention} (${mention.count} mentions)`;
+                    mentionItem.addEventListener('click', () => fetchTweetsForMention(mention.mention));
+                    mentionList.appendChild(mentionItem);
+                });
+            } catch (error) {
+                console.error('Error fetching top mentions:', error);
+            }
+        }
+
+        // Function to fetch tweets for a specific mention
+        async function fetchTweetsForMention(mention) {
+            try {
+                const response = await fetch(`/mentions/${mention}/`);
+                const data = await response.json();
+                const tweetList = document.getElementById('tweet-list');
+                tweetList.innerHTML = ''; // Clear the list before appending new tweets
+
+                if (data.tweets && data.tweets.length > 0) {
+                    data.tweets.forEach(tweet => {
+                        const tweetItem = document.createElement('li');
+                        tweetItem.classList.add('tweet-item');
+
+                        const tweetContent = document.createElement('p');
+                        tweetContent.classList.add('tweet-content');
+                        tweetContent.textContent = tweet.content;
+
+                        const tweetAuthor = document.createElement('div');
+                        tweetAuthor.classList.add('tweet-author');
+                        tweetAuthor.textContent = `By: ${tweet.person__name}`;
+
+                        tweetItem.appendChild(tweetContent);
+                        tweetItem.appendChild(tweetAuthor);
+                        tweetList.appendChild(tweetItem);
+                    });
+                } else {
+                    tweetList.innerHTML = '<li>No tweets found for this mention.</li>';
+                }
+            } catch (error) {
+                console.error('Error fetching tweets for mention:', error);
+            }
+        }
+
+        // Fetch top mentions on page load
+        fetchTopMentions();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Profiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .profile:last-child {
+            border-bottom: none;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .profile-details {
+            flex: 1;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .pagination a:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Similar Profiles</h1>
+        <div id="profiles"></div>
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+        const apiUrl = '/similar-profiles-api/'; // Replace with your API endpoint URL
+        let currentPage = 1;
+
+        async function fetchProfiles(page = 1) {
+            try {
+                const response = await fetch(`${apiUrl}?page=${page}&per_page=10`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch profiles.');
+                }
+
+                const data = await response.json();
+                displayProfiles(data.profiles);
+                setupPagination(data.current_page, data.total_pages);
+            } catch (error) {
+                console.error(error);
+                document.getElementById('profiles').innerHTML = '<p style="color:red;">Failed to load profiles. Please try again later.</p>';
+            }
+        }
+
+        function displayProfiles(profiles) {
+            const profilesContainer = document.getElementById('profiles');
+            profilesContainer.innerHTML = '';
+
+            profiles.forEach(profile => {
+                const profileDiv = document.createElement('div');
+                profileDiv.className = 'profile';
+
+                const profileImage = document.createElement('img');
+                profileImage.src = profile.profile_image || 'https://via.placeholder.com/50';
+                profileImage.alt = profile.username;
+
+                const profileDetails = document.createElement('div');
+                profileDetails.className = 'profile-details';
+                profileDetails.innerHTML = `
+                    <p><strong>${profile.name}</strong> (@${profile.username})</p>
+                    <p>Relationship Status: ${profile.relationship_status || 'N/A'}</p>
+                    <p>Sexual Orientation: ${profile.sexual_orientation || 'N/A'}</p>
+                `;
+
+                profileDiv.appendChild(profileImage);
+                profileDiv.appendChild(profileDetails);
+                profilesContainer.appendChild(profileDiv);
+            });
+        }
+
+        function setupPagination(current, total) {
+            const paginationContainer = document.getElementById('pagination');
+            paginationContainer.innerHTML = '';
+
+            for (let i = 1; i <= total; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.textContent = i;
+                pageLink.href = '#';
+                pageLink.className = i === current ? 'active' : '';
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    fetchProfiles(i);
+                });
+                paginationContainer.appendChild(pageLink);
+            }
+        }
+
+        // Initial fetch
+        fetchProfiles(currentPage);
+    </script>
+</body>
+</html>

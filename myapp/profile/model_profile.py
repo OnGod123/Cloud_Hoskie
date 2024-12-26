@@ -20,3 +20,22 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.person.name}'s Profile"
+  
+def save(self, *args, **kwargs):
+        # Generate face encoding if a profile picture is provided
+        if self.profile_picture:
+            image_path = self.profile_picture.path
+            image = face_recognition.load_image_file(image_path)
+            encodings = face_recognition.face_encodings(image)
+
+            if encodings:
+                self.face_encoding = encodings[0].tolist()  # Store encoding as a JSON-serializable list
+            else:
+                self.face_encoding = None  # No face detected in the profile picture
+
+        self.username = self.person.username
+        self.social_media_url = self.person.social_media_api.get("primary_api", "")
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.person.name}'s Profile"

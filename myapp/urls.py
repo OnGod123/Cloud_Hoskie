@@ -9,5 +9,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), 
     path('home/', home, name='home'),
     path('login/', login_view, name='login'),
+      path('api/similar-profiles/', similar_profiles_view, name='similar_profiles'),
     path('video_call/<str:recipient>/', voice_call_view, name='videocall')  # Reference the voice_call_view from video_call.views
 ]

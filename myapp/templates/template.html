@@ -1,0 +1,18 @@
+fetch('/retweet/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrfToken,  // Make sure to include the CSRF token
+    },
+    body: JSON.stringify({
+        tweet_id: tweetId,  // The ID of the tweet being retweeted
+        content: 'This is my retweet!'  // Optional comment
+    })
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Retweet successful', data);
+})
+.catch(error => {
+    console.error('Error retweeting:', error);
+});

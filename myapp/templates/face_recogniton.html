@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            text-align: center;
+        }
+        .preview {
+            margin: 10px 0;
+        }
+        .error, .success {
+            margin-top: 10px;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .error {
+            background-color: #e74c3c;
+        }
+        .success {
+            background-color: #2ecc71;
+        }
+        .mode-toggle {
+            margin-bottom: 20px;
+        }
+        .mode-toggle button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Face Recognition System</h1>
+        <div class="mode-toggle">
+            <button id="identifyMode">Identify Person</button>
+            <button id="compareMode">Compare Face</button>
+        </div>
+        <p id="modeDescription">Upload an image or capture one using your camera to identify a person.</p>
+
+        <input type="file" id="imageInput" accept="image/*">
+        <button id="captureButton">Capture from Camera</button>
+        <video id="video" autoplay style="display:none;"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <div class="preview">
+            <img id="preview" src="" alt="Preview" width="200">
+        </div>
+
+        <button id="submitButton">Submit</button>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const preview = document.getElementById('preview');
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureButton = document.getElementById('captureButton');
+        const submitButton = document.getElementById('submitButton');
+        const message = document.getElementById('message');
+        const modeDescription = document.getElementById('modeDescription');
+        const identifyModeButton = document.getElementById('identifyMode');
+        const compareModeButton = document.getElementById('compareMode');
+
+        let currentMode = 'identify'; // Default mode
+        let capturedImage = null;
+
+        // Toggle modes
+        identifyModeButton.addEventListener('click', () => {
+            currentMode = 'identify';
+            modeDescription.textContent = "Upload an image or capture one using your camera to identify a person.";
+            message.innerHTML = '';
+        });
+
+        compareModeButton.addEventListener('click', () => {
+            currentMode = 'compare';
+            modeDescription.textContent = "Upload an image or capture one using your camera to compare a face.";
+            message.innerHTML = '';
+        });
+
+        // Display the selected image
+        imageInput.addEventListener('change', () => {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    preview.src = e.target.result;
+                    capturedImage = file;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Enable camera and capture an image
+        captureButton.addEventListener('click', () => {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+                    video.style.display = 'block';
+                    video.srcObject = stream;
+                    video.play();
+
+                    captureButton.innerText = 'Capture';
+                    captureButton.onclick = () => {
+                        canvas.style.display = 'block';
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+                        video.style.display = 'none';
+                        const dataURL = canvas.toDataURL();
+                        preview.src = dataURL;
+                        capturedImage = dataURLtoBlob(dataURL);
+
+                        stream.getTracks().forEach(track => track.stop());
+                        captureButton.innerText = 'Capture from Camera';
+                    };
+                });
+            } else {
+                alert('Camera not supported on this browser.');
+            }
+        });
+
+        // Convert DataURL to Blob
+        function dataURLtoBlob(dataURL) {
+            const parts = dataURL.split(',');
+            const byteString = atob(parts[1]);
+            const mimeString = parts[0].split(':')[1].split(';')[0];
+            const buffer = new Uint8Array(byteString.length);
+            for (let i = 0; i < byteString.length; i++) {
+                buffer[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([buffer], { type: mimeString });
+        }
+
+        // Submit the image to the backend
+        submitButton.addEventListener('click', () => {
+            if (!capturedImage) {
+                message.innerHTML = '<div class="error">No image selected or captured.</div>';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', capturedImage);
+
+            const endpoint = currentMode === 'identify' ? '/identify-person/' : '/compare-face/';
+
+            fetch(endpoint, {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    message.innerHTML = `<div class="error">${data.error}</div>`;
+                } else {
+                    const successMessage = currentMode === 'identify'
+                        ? `Person Identified: ${data.username} (ID: ${data.person_id})`
+                        : `Face Match Found: ${data.username} (ID: ${data.person_id})`;
+                    message.innerHTML = `<div class="success">${successMessage}</div>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                message.innerHTML = '<div class="error">An unexpected error occurred.</div>';
+            });
+        });
+    </script>
+</body>
+</html>
