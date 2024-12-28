@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp.urls')),
+    path('/', include('myapp.urls')),
     path('profile/', include('myapp.profile.urls')),
     path('search/', include('myapp.elastic_search.urls')),
     path('logout/', include('myapp.logout.urls')),
@@ -31,6 +31,7 @@ urlpatterns = [
     path('live_app/', include('myapp.live_go.urls')),
     path(" ", imclude('myapp.file_upload.urls')),
     path(" ", include('myapp.wallet.urls')),
+    path(" ", include('myapp.authenticate.urls'),
     path('image/', include('myapp.profile.Image.urls'))
 ]
 

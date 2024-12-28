@@ -7,16 +7,14 @@ import logging
 # Set up logging
 logger = logging.getLogger(__name__)
 
-def home(request):
-    return HttpResponse("welcome to the Home page")
+def home(request): 
 
-def index(request):
     if request.method == 'GET':
-        return render(request, 'index.html')
+        return render(request, 'home.html')
     else:
         return HttpResponse('Invalid request method.')
 
-def submit(request):
+def create_account(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         relationship_status = request.POST.get('relationship_status')
