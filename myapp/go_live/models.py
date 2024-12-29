@@ -1,5 +1,5 @@
 from django.db import models
-from myapp.mpdels import Person
+from myapp.models import Person
 
 class LiveSession(models.Model):
     host = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='hosted_sessions')

@@ -1,4 +1,4 @@
-from elasticsearch import connections
+from elasticsearch_dsl import connections
 
 def configure_elasticsearch():
     connections.configure(

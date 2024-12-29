@@ -69,12 +69,16 @@ INSTALLED_APPS = [
     'django_elasticsearch_dsl',
     'myapp.profile',# Your other custom app
     'channels',
-    'myapp.apps.MyappConfig',
     'myapp.video_call',
     'myapp.chat',
     'myapp.voice_message',
-    'myapp.upload_file',
+    'myapp.file_upload',
     'myapp.go_live',
+    'myapp.authentication',
+    'myapp.wallet',
+    'myapp.followers',
+    'myapp.Userrs_like',
+    'myapp.apps.MyAppConfig',
     'corsheaders', 
 ]
 

@@ -1,5 +1,8 @@
 from django.db import models
-from myapp.models import Person  
+from myapp.models import Person
+from myapp.profile.tweet.tweet_models import Tweet
+
+
 class Like(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)  # Reference to Person who liked the tweet
     tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE)  # The tweet that is liked
