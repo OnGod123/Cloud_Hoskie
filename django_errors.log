@@ -8805,3 +8805,7 @@ INFO 2024-12-29 05:24:41,433 autoreload /Cloud_Hoskie/Cloud_Hoskie/settings.py c
 INFO 2024-12-29 05:24:49,399 autoreload Watching for file changes with StatReloader
 INFO 2024-12-29 06:22:28,865 autoreload /Cloud_Hoskie/Cloud_Hoskie/settings.py changed, reloading.
 INFO 2024-12-29 06:22:36,302 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:16:25,405 autoreload /Cloud_Hoskie/Cloud_Hoskie/urls.py changed, reloading.
+INFO 2024-12-30 17:16:33,403 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:22:08,509 autoreload /Cloud_Hoskie/Cloud_Hoskie/urls.py changed, reloading.
+INFO 2024-12-30 17:22:16,797 autoreload Watching for file changes with StatReloader
