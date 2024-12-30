@@ -71,7 +71,7 @@ def create_account(request):
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from myapp.models import Person
-from myapp.profile.models import Profile  # Adjust the import path
+from myapp.profile.model_profile import Profile  # Adjust the import path
 
 
 def similar_profiles_view(request):

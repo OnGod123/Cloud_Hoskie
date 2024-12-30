@@ -3,7 +3,7 @@ import os
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
-from .models import Video
+from .videos_model import Video
 from myapp.models import Person
 
 # Render the video page

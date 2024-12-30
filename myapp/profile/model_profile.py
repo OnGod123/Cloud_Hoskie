@@ -21,7 +21,7 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.person.name}'s Profile"
   
-def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
         # Generate face encoding if a profile picture is provided
         if self.profile_picture:
             image_path = self.profile_picture.path
