@@ -1,10 +1,11 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
-from .models import Tweet, Retweet
+from .tweet_models import Tweet, Retweet
 from myapp.models import Person
 import json
 import re
+from django.contrib.auth.decorators import login_required
 
 @csrf_exempt
 def tweet_view(request):
@@ -104,7 +105,7 @@ def retweet_view(request):
                     'created_at': retweet.created_at,
                     'person': {
                         'name': retweet.person.name,
-                        'user_video': tweet.person_uservideo
+                        'user_video': tweet.person_uservideo,
                         'username': retweet.person.username,
                     },
                     'original_tweet': {
