@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from myapp.models import Person
-from .models import Image
+from .image_models import Image
 import os
 import base64
 from io import BytesIO

@@ -6,7 +6,7 @@ from .models import Message
 from myapp.models import Person
 import os
 @login_required
-def chat_view(request, recipient_username):
+def voice_message(request, recipient_username):
     recipient = get_object_or_404(User, username=recipient_username)
     messages = Message.objects.filter(
         sender__in=[request.user, recipient],
@@ -41,4 +41,3 @@ def upload_voice_message(request):
         return JsonResponse({'status': 'error', 'message': 'Invalid request method or no file provided'})
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)})
-```

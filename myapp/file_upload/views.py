@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from .models import Message
+from .models import File
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 import os
@@ -26,7 +26,7 @@ def upload_file_message(request):
                 raise ValidationError("File size exceeds 10 MB limit")
 
             # Save file message to database
-            message = Message.objects.create(
+            message = File.objects.create(
                 sender=request.user,
                 recipient=recipient,
                 message_type='file',

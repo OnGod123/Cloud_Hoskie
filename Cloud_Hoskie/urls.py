@@ -12,12 +12,12 @@ urlpatterns = [
     path('video-call/', include('myapp.video_call.urls')),
     path('video/', include('myapp.profile.video.urls')),
     path('chat/', include('myapp.chat.urls')),
-    path('Tweet/', include('myapp.Tweet.urls')),  # Fixed missing parenthesis
-    path('Voice_messaging/', include('myapp.Voice_message.urls')),  # Fixed capitalization and missing parenthesis
-    path('live_app/', include('myapp.live_go.urls')),
+    path('Tweet/', include('myapp.profile.tweet.urls')),  # Fixed missing parenthesis
+    path('Voice_messaging/', include('myapp.voice_message.urls')),  # Fixed capitalization and missing parenthesis
+    path('live_app/', include('myapp.go_live.urls')),
     path(" ", include('myapp.file_upload.urls')),  # Fixed capitalization of 'imclude'
     path(" ", include('myapp.wallet.urls')),
-    path(" ", include('myapp.authenticate.urls')),  # Fixed missing parenthesis
+    path(" ", include('myapp.authentication.urls')),  # Fixed missing parenthesis
     path('image/', include('myapp.profile.Image.urls')),
 ]
 
