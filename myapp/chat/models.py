@@ -6,7 +6,7 @@ class ChatSession(models.Model):
     """
     Represents an active or historical chat session between two users.
     """
-    initiator = models.ForeignKey(Person, related_name="initiated_chats", on_delete=models.CASCADE)
+    initiator = models.ForeignKey(Person, related_name="sessions_for_chat", on_delete=models.CASCADE)
     recipient = models.ForeignKey(Person, related_name="received_chats", on_delete=models.CASCADE)
     start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField(null=True, blank=True)
@@ -20,7 +20,7 @@ class ChatMessage(models.Model):
     """
     Represents a single chat message in a ChatSession.
     """
-    session = models.ForeignKey(ChatSession, related_name="messages", on_delete=models.CASCADE)
+    session = models.ForeignKey(ChatSession, related_name="message_database", on_delete=models.CASCADE)
     sender = models.ForeignKey(Person, related_name="sent_messages", on_delete=models.CASCADE)
     content = models.TextField()
     timestamp = models.DateTimeField(default=timezone.now)
@@ -34,7 +34,7 @@ class TypingIndicator(models.Model):
     """
     Tracks whether a user is typing in a specific session.
     """
-    session = models.ForeignKey(ChatSession, related_name="typing_indicators", on_delete=models.CASCADE)
+    session = models.ForeignKey(ChatSession, related_name="indicators_for_typing", on_delete=models.CASCADE)
     user = models.ForeignKey(Person, on_delete=models.CASCADE)
     is_typing = models.BooleanField(default=False)
     updated_at = models.DateTimeField(auto_now=True)

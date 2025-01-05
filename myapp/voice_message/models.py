@@ -2,8 +2,8 @@ from django.db import models
 from myapp.models import Person
 
 class Message(models.Model):
-    sender = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='sent_messages')
-    recipient =  models.ForeignKey(Person, on_delete=models.CASCADE, related_name='received_messages')
+    sender = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='voice_messages')
+    recipient =  models.ForeignKey(Person, on_delete=models.CASCADE, related_name='voice_message_reciever')
     content = models.TextField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     message_type = models.CharField(max_length=10, choices=[

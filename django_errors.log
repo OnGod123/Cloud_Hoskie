@@ -8869,3 +8869,10 @@ INFO 2025-01-05 06:11:15,119 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\prof
 INFO 2025-01-05 06:11:19,949 autoreload Watching for file changes with StatReloader
 INFO 2025-01-05 06:12:21,128 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\Image\views.py changed, reloading.
 INFO 2025-01-05 06:12:26,448 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 11:16:56,307 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 11:19:45,947 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 11:23:27,273 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 11:29:27,448 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 11:42:49,015 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 12:06:16,597 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 13:11:12,175 autoreload Watching for file changes with StatReloader

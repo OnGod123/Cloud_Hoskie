@@ -1,4 +1,6 @@
+from myapp.video_call.consumers import ChatConsumer  # Correct import of ChatConsumer class
+from django.urls import re_path
+
 websocket_urlpatterns = [
-    re_path(r'ws/messaging/(?P<username>[^/]+)/(?P<recipientUsername>[^/]+)/$', consumers.ChatConsumer.as_asgi()),
+    re_path(r'ws/voice_messaging/(?P<username>[^/]+)/(?P<recipientUsername>[^/]+)/$', ChatConsumer.as_asgi()),
 ]
-```
