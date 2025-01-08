@@ -1,0 +1,62 @@
+<video id="video-player" controls autoplay></video>
+<button id="share-button">Share Video</button>
+<div id="metadata"></div>
+<script>
+    const socket = new WebSocket('ws://localhost:8000/ws/video-stream/');
+    const videoPlayer = document.getElementById('video-player');
+    const metadataDiv = document.getElementById('metadata');
+    const shareButton = document.getElementById('share-button');
+
+    let receivedMetadata = null;
+    let receivedChunks = [];
+
+    socket.onopen = function () {
+        const videoId = 1; // Replace with the actual video ID
+        socket.send(videoId.toString());
+    };
+
+    socket.onmessage = function (event) {
+        if (event.data.startsWith("ERROR:")) {
+            console.error("Server error:", event.data);
+            alert(event.data);
+        } else if (event.data.startsWith("{") && !receivedMetadata) {
+            // Parse and display metadata
+            receivedMetadata = JSON.parse(event.data);
+            metadataDiv.innerHTML = `
+                <h3>${receivedMetadata.title}</h3>
+                <p>Created at: ${receivedMetadata.created_at}</p>
+                <p>Updated at: ${receivedMetadata.updated_at}</p>
+            `;
+        } else if (event.data === "END_OF_STREAM") {
+            // Combine Base64 chunks, decode, and play the video
+            const base64String = receivedChunks.join('');
+            const binaryString = atob(base64String);
+            const byteArray = new Uint8Array(binaryString.length);
+            for (let i = 0; i < binaryString.length; i++) {
+                byteArray[i] = binaryString.charCodeAt(i);
+            }
+            const blob = new Blob([byteArray], { type: "video/mp4" }); // Adjust MIME type if needed
+            const videoUrl = URL.createObjectURL(blob);
+            videoPlayer.src = videoUrl;
+
+            // Cleanup received chunks
+            receivedChunks = [];
+        } else {
+            // Accumulate video chunks
+            receivedChunks.push(event.data);
+        }
+    };
+
+    socket.onerror = function (error) {
+        console.error("WebSocket error:", error);
+    };
+
+    // Share button functionality
+    shareButton.addEventListener("click", () => {
+        if (receivedMetadata) {
+            alert(`Share this video with ID: ${receivedMetadata.id}`);
+        } else {
+            alert("No video is currently being streamed to share.");
+        }
+    });
+</script>
