@@ -3,7 +3,8 @@ import logging
 from asgiref.sync import sync_to_async
 from channels.generic.websocket import AsyncWebsocketConsumer
 from django.core.exceptions import ObjectDoesNotExist
-from .models import User, ChatSession, ChatMessage, TypingIndicator
+from myapp.models import Person
+from .models import ChatSession, ChatMessage, TypingIndicator
 from datetime import datetime
 
 logger = logging.getLogger(__name__)

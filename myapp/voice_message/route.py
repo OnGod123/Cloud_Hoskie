@@ -1,4 +1,4 @@
-from myapp.video_call.consumers import ChatConsumer  # Correct import of ChatConsumer class
+from myapp.voice_message.consumers import ChatConsumer  # Correct import of ChatConsumer class
 from django.urls import re_path
 
 websocket_urlpatterns = [

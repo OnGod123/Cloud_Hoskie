@@ -8876,3 +8876,36 @@ INFO 2025-01-05 11:29:27,448 autoreload Watching for file changes with StatReloa
 INFO 2025-01-05 11:42:49,015 autoreload Watching for file changes with StatReloader
 INFO 2025-01-05 12:06:16,597 autoreload Watching for file changes with StatReloader
 INFO 2025-01-05 13:11:12,175 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 06:57:53,514 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:00:46,332 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2025-01-08 07:00:51,247 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:02:48,539 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\settings.py changed, reloading.
+INFO 2025-01-08 07:02:52,302 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:06:55,385 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:10:51,945 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\tweet\mentions\views.py changed, reloading.
+INFO 2025-01-08 07:10:58,220 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:12:45,082 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\tweet\mentions\views.py changed, reloading.
+INFO 2025-01-08 07:12:50,018 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:16:08,128 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\tweet\trend_views\views.py changed, reloading.
+INFO 2025-01-08 07:16:13,752 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:19:14,579 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:20:55,318 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\comment\models.py changed, reloading.
+INFO 2025-01-08 07:21:00,698 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 07:25:23,314 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\comment\models.py changed, reloading.
+INFO 2025-01-08 07:25:28,583 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 09:57:29,691 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 09:59:00,420 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\comment\models.py changed, reloading.
+INFO 2025-01-08 09:59:05,689 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 10:01:45,838 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 10:03:50,438 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 10:58:31,432 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 13:05:44,528 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 14:28:52,617 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 14:30:37,761 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 14:32:41,876 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\voice_message\consumers.py changed, reloading.
+INFO 2025-01-08 14:32:49,293 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 14:44:52,870 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 14:58:30,829 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 15:21:24,660 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 15:25:51,959 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 15:32:56,484 autoreload Watching for file changes with StatReloader

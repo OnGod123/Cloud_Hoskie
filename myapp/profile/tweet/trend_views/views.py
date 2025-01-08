@@ -1,6 +1,6 @@
 from django.views import View
 from django.http import JsonResponse
-from .models import Tweet
+from myapp.profile.tweet.tweet_models import Tweet
 import redis
 import time
 import logging

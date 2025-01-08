@@ -1,4 +1,3 @@
-```python
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from .models import Message
@@ -78,4 +77,3 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def signaling_message(self, event):
         # Forward WebRTC signaling message to WebSocket
         await self.send(text_data=json.dumps(event['data']))
-```

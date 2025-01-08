@@ -17,7 +17,10 @@ urlpatterns = [
     path('live_app/', include('myapp.go_live.urls')),
     path(" ", include('myapp.file_upload.urls')),  # Fixed capitalization of 'imclude'
     path(" ", include('myapp.wallet.urls')),
-    path(" ", include('myapp.authentication.urls')),  # Fixed missing parenthesis
+    path(" ", include('myapp.authentication.urls')), 
+    path(" ", include('myapp.profile.tweet.mentions.urls')),
+    path(" ", include('myapp.profile.tweet.trend_views.urls')),
+    path(" ",include('myapp.comment.urls')),
     path('image/', include('myapp.profile.Image.urls')),
 ]
 

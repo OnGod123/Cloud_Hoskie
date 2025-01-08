@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'myapp.wallet',
     'myapp.followers',
     'myapp.Userrs_like',
+    'myapp.profile.tweet.mentions',
     'myapp.apps.MyAppConfig',
     'corsheaders', 
 ]

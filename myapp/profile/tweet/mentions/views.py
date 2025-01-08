@@ -5,7 +5,8 @@ import time
 from django.db import DatabaseError
 from django.http import JsonResponse
 from django.views import View
-from .models import Tweet
+from myapp.profile.tweet.tweet_models import Tweet
+
 
 # Redis setup
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0)
