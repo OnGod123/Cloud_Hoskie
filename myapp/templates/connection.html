@@ -1,0 +1,73 @@
+<div id="profiles-container" style="overflow-y: scroll; height: 400px;">
+    {% for profile in results %}
+        <div class="profile" data-id="{{ profile.id }}">
+            <p>Name: {{ profile.name }}</p>
+            <p>Username: {{ profile.username }}</p>
+            <button class="connect-btn">Connect</button>
+        </div>
+    {% endfor %}
+</div>
+
+<div>
+    {% if results.has_previous %}
+        <a href="?page={{ results.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ results.number }} of {{ results.paginator.num_pages }}</span>
+
+    {% if results.has_next %}
+        <a href="?page={{ results.next_page_number }}">Next</a>
+    {% endif %}
+</div>
+
+<script>
+    document.querySelectorAll('.connect-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const profileDiv = this.parentElement;
+            const profileId = profileDiv.dataset.id;
+
+            fetch(`/send-connection-request/${profileId}/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
+        });
+    });
+</script>
+
+<div id="profiles-container" style="overflow-y: scroll; height: 400px;">
+    <!-- Profiles will be dynamically appended here -->
+</div>
+
+<script>
+    let page = 1;
+    const container = document.getElementById('profiles-container');
+
+    function loadProfiles() {
+        fetch(`?page=${page}`)
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const newProfiles = parser.parseFromString(data, 'text/html')
+                                    .querySelectorAll('.profile');
+
+                newProfiles.forEach(profile => container.appendChild(profile));
+                page++;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    container.addEventListener('scroll', () => {
+        if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+            loadProfiles();
+        }
+    });
+
+    loadProfiles();
+</script>
+

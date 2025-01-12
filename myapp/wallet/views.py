@@ -36,11 +36,25 @@ def initiate_payment(request, payment_type):
             paystack = Paystack()
             status, response = paystack.initialize_payment(payment)
             if status:
+                verification_status, verification_response = paystack.verify_payment(payment.ref)
+                if verification_status:
+                    payment.is_successful = True  # Mark payment as successful
+                    payment.save()
+                    return JsonResponse({'payment': response, 'message': 'Payment verified and marked as successful.'})
+                else:
+                    logger.error(f"Payment verification failed: {verification_response}")
+                    return JsonResponse({'error': 'Payment verification failed. Please try again.'}, status=400)
+
+            else:
+                logger.error(f"Paystack initialization failed: {response}")
+                return JsonResponse({'error': 'Failed to initialize payment. Try again later.'}, status=500)
+
                 return JsonResponse({'payment': response})
             else:
                 # Log errors for debugging
                 logger.error(f"Paystack initialization failed: {response}")
                 return JsonResponse({'error': 'Failed to initialize payment. Try again later.'}, status=500)
+   
 
         return render(request, 'payment.html', {'payment_type': payment_type})
 
@@ -85,3 +99,27 @@ class Paystack:
             # Catch all unexpected errors
             logger.error(f"Unexpected error in Paystack initialization: {str(e)}")
             return False, {'error': 'An unexpected error occurred while initializing payment.'}
+
+    def verify_payment(self, reference):
+        """
+        Verify payment using the reference provided during initialization.
+        """
+        try:
+            url = f"{self.base_url}transaction/verify/{reference}"
+            headers = {
+                "Authorization": f"Bearer {self.PAYSTACK_SK}",
+            }
+            response = requests.get(url, headers=headers)
+            if response.status_code == 200:
+                response_data = response.json()
+                if response_data['data']['status'] == 'success':
+                    return True, response_data['data']
+                else:
+                    logger.error(f"Payment not successful: {response_data}")
+                    return False, response_data
+            else:
+                logger.error(f"Paystack verification error: {response.json()}")
+                return False, response.json()
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Paystack verification request failed: {str(e)}")
+            return False, {'error': 'Verification failed due to a network issue.'}

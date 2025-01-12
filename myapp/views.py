@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from .models import Person
 from .emails import send_welcome_email
 import logging
-
+from django.contrib.auth.models import User
 # Set up logging
+
 logger = logging.getLogger(__name__)
 
 def home(request): 
@@ -33,7 +34,7 @@ def create_account(request):
             return HttpResponse('All fields are required.')
 
         # Save the data to the database
-        person = Person(
+        person = Person.object.create(
             name=name,
             relationship_status=relationship_status,
             sexual_orientation=sexual_orientation,
@@ -44,7 +45,8 @@ def create_account(request):
             email=email,
             password=password
         )
-        
+
+        user = User.objects.create_user(username=username, password=password)
         try:
             person.save()
             logger.info(f"Successfully saved person: {person.name}")
