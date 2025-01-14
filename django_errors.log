@@ -8909,3 +8909,14 @@ INFO 2025-01-08 14:58:30,829 autoreload Watching for file changes with StatReloa
 INFO 2025-01-08 15:21:24,660 autoreload Watching for file changes with StatReloader
 INFO 2025-01-08 15:25:51,959 autoreload Watching for file changes with StatReloader
 INFO 2025-01-08 15:32:56,484 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 16:17:52,954 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\asgi.py changed, reloading.
+INFO 2025-01-08 16:18:10,437 autoreload Watching for file changes with StatReloader
+INFO 2025-01-08 17:15:50,827 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\urls.py changed, reloading.
+INFO 2025-01-08 17:16:02,096 autoreload Watching for file changes with StatReloader
+INFO 2025-01-10 04:30:52,250 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\urls.py changed, reloading.
+INFO 2025-01-10 04:30:58,143 autoreload Watching for file changes with StatReloader
+INFO 2025-01-10 04:33:10,063 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\wallet\models.py changed, reloading.
+INFO 2025-01-10 04:33:13,965 autoreload Watching for file changes with StatReloader
+INFO 2025-01-10 04:35:59,172 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\wallet\models.py changed, reloading.
+INFO 2025-01-10 04:36:03,050 autoreload Watching for file changes with StatReloader
+INFO 2025-01-14 13:29:08,170 autoreload Watching for file changes with StatReloader
