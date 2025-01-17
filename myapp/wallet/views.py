@@ -49,13 +49,6 @@ def initiate_payment(request, payment_type):
                 logger.error(f"Paystack initialization failed: {response}")
                 return JsonResponse({'error': 'Failed to initialize payment. Try again later.'}, status=500)
 
-                return JsonResponse({'payment': response})
-            else:
-                # Log errors for debugging
-                logger.error(f"Paystack initialization failed: {response}")
-                return JsonResponse({'error': 'Failed to initialize payment. Try again later.'}, status=500)
-   
-
         return render(request, 'payment.html', {'payment_type': payment_type})
 
     except Exception as e:

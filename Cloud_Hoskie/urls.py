@@ -21,7 +21,7 @@ urlpatterns = [
     path(" ", include('myapp.profile.tweet.mentions.urls')),
     path(" ", include('myapp.profile.tweet.trend_views.urls')),
     path(" ",include('myapp.comment.urls')),
-    path(" ", include('myapp.profile.video.video_streaming.urls'))
+    path(" ", include('myapp.profile.video.video_streaming.urls')),
     path('image/', include('myapp.profile.Image.urls')),
 ]
 

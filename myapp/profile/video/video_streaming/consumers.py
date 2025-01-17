@@ -2,7 +2,7 @@ import base64
 import os
 import asyncio
 from channels.generic.websocket import AsyncWebsocketConsumer
-from video.models import Video
+from myapp.profile.video.videos_model import Video
 
 class VideoStreamConsumer(AsyncWebsocketConsumer):
     async def connect(self):

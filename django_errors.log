@@ -8920,3 +8920,25 @@ INFO 2025-01-10 04:33:13,965 autoreload Watching for file changes with StatReloa
 INFO 2025-01-10 04:35:59,172 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\wallet\models.py changed, reloading.
 INFO 2025-01-10 04:36:03,050 autoreload Watching for file changes with StatReloader
 INFO 2025-01-14 13:29:08,170 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 05:16:37,213 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 05:20:30,552 autoreload C:\Users\vincent\Cloud_Hoskie\Cloud_Hoskie\urls.py changed, reloading.
+INFO 2025-01-15 05:20:44,144 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 05:26:29,712 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\wallet\views.py changed, reloading.
+INFO 2025-01-15 05:26:54,181 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 06:42:09,773 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\wallet\views.py changed, reloading.
+INFO 2025-01-15 06:42:50,043 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 10:59:36,674 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\views.py changed, reloading.
+INFO 2025-01-15 11:00:17,350 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 11:36:28,451 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\views.py changed, reloading.
+INFO 2025-01-15 11:36:35,024 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 11:45:06,896 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\views.py changed, reloading.
+INFO 2025-01-15 11:45:11,630 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 11:49:56,413 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\views.py changed, reloading.
+INFO 2025-01-15 11:50:01,924 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 11:56:08,285 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\views.py changed, reloading.
+INFO 2025-01-15 11:56:13,663 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 11:59:07,577 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\views.py changed, reloading.
+INFO 2025-01-15 11:59:12,669 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 12:37:51,899 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\urls.py changed, reloading.
+INFO 2025-01-15 12:37:59,991 autoreload Watching for file changes with StatReloader
+INFO 2025-01-15 12:53:14,546 autoreload Watching for file changes with StatReloader

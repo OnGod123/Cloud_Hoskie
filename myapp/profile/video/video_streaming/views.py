@@ -1,14 +1,12 @@
-
 from django.shortcuts import render
-
-def video_stream_view(request):
-    return render(request, 'video_stream.html')
-
-import base64
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
-from .models import Video
+from myapp.profile.video.videos_model import Video
+import base64
+
+def video_stream_view(request):
+    return render(request, 'video_stream.html')
 
 @csrf_exempt
 def share_video(request, video_id):
@@ -23,6 +21,8 @@ def share_video(request, video_id):
             encoded_video = base64.b64encode(video_file.read()).decode('utf-8')
 
         return JsonResponse({"video_id": video_id, "video_data": encoded_video, "title": video.title})
+    except FileNotFoundError:
+        return JsonResponse({"error": "Video file not found."}, status=404)
     except Exception as e:
-        return JsonResponse({"error": str(e)}, status=500)
-
+        # Log the error here if needed
+        return JsonResponse({"error": "An error occurred while processing the video."}, status=500)
