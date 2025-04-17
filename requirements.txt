@@ -14,5 +14,5 @@ PyJWT
 cryptography
 channels>=3.0,<4.0
 django-cors-headers
-
+geocoder
 

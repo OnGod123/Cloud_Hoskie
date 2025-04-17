@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include('myapp.urls')),
+    path("", include('myapp.urls')),
     path('profile/', include('myapp.profile.urls')),
     path('search/', include('myapp.elastic_search.urls')),
     path('logout/', include('myapp.logout.urls')),
@@ -15,13 +15,13 @@ urlpatterns = [
     path('Tweet/', include('myapp.profile.tweet.urls')),  # Fixed missing parenthesis
     path('Voice_messaging/', include('myapp.voice_message.urls')),  # Fixed capitalization and missing parenthesis
     path('live_app/', include('myapp.go_live.urls')),
-    path(" ", include('myapp.file_upload.urls')),  # Fixed capitalization of 'imclude'
-    path(" ", include('myapp.wallet.urls')),
-    path(" ", include('myapp.authentication.urls')), 
-    path(" ", include('myapp.profile.tweet.mentions.urls')),
-    path(" ", include('myapp.profile.tweet.trend_views.urls')),
-    path(" ",include('myapp.comment.urls')),
-    path(" ", include('myapp.profile.video.video_streaming.urls')),
+    path("", include('myapp.file_upload.urls')),  # Fixed capitalization of 'imclude'
+    path("", include('myapp.wallet.urls')),
+    path("", include('myapp.authentication.urls')), 
+    path("", include('myapp.profile.tweet.mentions.urls')),
+    path("", include('myapp.profile.tweet.trend_views.urls')),
+    path("",include('myapp.comment.urls')),
+    path(":", include('myapp.profile.video.video_streaming.urls')),
     path('image/', include('myapp.profile.Image.urls')),
 ]
 

@@ -142,14 +142,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Cloud_Hoskie.wsgi.application'
 CACHES = {
-            'default': {
-                        'BACKEND': 'django_redis.cache.RedisCache',
-                                'LOCATION': 'redis://127.0.0.1:6379/1',  
-                                        'OPTIONS': {
-                                                        'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-                                                                }
-                                            }
-            }
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
 
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
@@ -261,13 +262,6 @@ SOCIALACCOUNT_PROVIDERS = {
         },
         'SCOPE': ['user_profile'],
     },
-}
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
-    }
 }
 
 

@@ -8949,3 +8949,248 @@ INFO 2025-04-17 05:12:58,144 autoreload Watching for file changes with StatReloa
 INFO 2025-04-17 06:40:30,751 autoreload Watching for file changes with StatReloader
 INFO 2025-04-17 11:05:09,444 autoreload Watching for file changes with StatReloader
 INFO 2025-04-17 11:08:20,226 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 11:23:48,265 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 11:27:02,999 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 11:44:48,693 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 11:47:28,238 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-17 11:50:03,135 log Not Found: /login
+WARNING 2025-04-17 11:50:03,139 runserver [33mHTTP GET /login 404 [0.14, 127.0.0.1:40612][0m
+WARNING 2025-04-17 11:50:03,284 log Not Found: /favicon.ico
+WARNING 2025-04-17 11:50:03,284 runserver [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:40612][0m
+WARNING 2025-04-17 11:52:57,082 log Not Found: /sign-in/
+WARNING 2025-04-17 11:52:57,083 runserver [33mHTTP GET /sign-in/ 404 [0.05, 127.0.0.1:40614][0m
+WARNING 2025-04-17 11:52:57,728 log Not Found: /favicon.ico
+WARNING 2025-04-17 11:52:57,730 runserver [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:40618][0m
+WARNING 2025-04-17 11:55:44,083 log Not Found: /sign-in/
+WARNING 2025-04-17 11:55:44,087 runserver [33mHTTP GET /sign-in/ 404 [0.03, 127.0.0.1:40622][0m
+INFO 2025-04-17 12:03:52,403 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-17 12:04:40,436 log Not Found: /sign-in/
+WARNING 2025-04-17 12:04:40,438 runserver [33mHTTP GET /sign-in/ 404 [0.07, 127.0.0.1:40626][0m
+INFO 2025-04-17 12:14:57,152 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-17 12:16:00,621 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:16:00,633 runserver [35;1mHTTP GET /sign-in/ 500 [0.14, 127.0.0.1:40634][0m
+INFO 2025-04-17 12:19:37,680 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-17 12:19:47,333 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:19:47,341 runserver [35;1mHTTP GET /sign-in/ 500 [0.10, 127.0.0.1:40638][0m
+ERROR 2025-04-17 12:19:50,209 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:19:50,229 runserver [35;1mHTTP GET /sign-in/ 500 [0.07, 127.0.0.1:40642][0m
+ERROR 2025-04-17 12:19:50,692 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:19:50,697 runserver [35;1mHTTP GET /sign-in/ 500 [0.04, 127.0.0.1:40642][0m
+ERROR 2025-04-17 12:19:51,111 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:19:51,115 runserver [35;1mHTTP GET /sign-in/ 500 [0.04, 127.0.0.1:40642][0m
+ERROR 2025-04-17 12:19:51,540 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:19:51,544 runserver [35;1mHTTP GET /sign-in/ 500 [0.05, 127.0.0.1:40642][0m
+INFO 2025-04-17 12:24:32,991 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-17 12:24:49,961 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:24:49,981 runserver [35;1mHTTP GET /sign-in/ 500 [0.11, 127.0.0.1:40650][0m
+ERROR 2025-04-17 12:24:53,041 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:24:53,071 runserver [35;1mHTTP GET /sign-in/ 500 [0.17, 127.0.0.1:40654][0m
+INFO 2025-04-17 12:28:18,272 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-17 12:28:30,051 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:28:30,056 runserver [35;1mHTTP GET /sign-in/ 500 [0.07, 127.0.0.1:40656][0m
+ERROR 2025-04-17 12:28:32,509 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:28:32,515 runserver [35;1mHTTP GET /sign-in/ 500 [0.06, 127.0.0.1:40660][0m
+ERROR 2025-04-17 12:28:33,449 log Internal Server Error: /sign-in/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 26, in _wrapped
+    redis_client = get_redis_connection("default")
+  File "/home/vincent/.local/lib/python3.8/site-packages/django_redis/__init__.py", line 15, in get_redis_connection
+    raise NotImplementedError("This backend does not support this feature")
+NotImplementedError: This backend does not support this feature
+ERROR 2025-04-17 12:28:33,453 runserver [35;1mHTTP GET /sign-in/ 500 [0.04, 127.0.0.1:40660][0m
+INFO 2025-04-17 12:39:50,853 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 12:50:05,296 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 12:50:19,266 runserver [mHTTP GET /sign-in/ 200 [0.08, 127.0.0.1:40670][0m
+INFO 2025-04-17 12:50:19,801 runserver [mHTTP GET /sign-in/ 200 [0.03, 127.0.0.1:40670][0m
