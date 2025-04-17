@@ -5,23 +5,23 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include('myapp.urls')),
+    path('', include('myapp.urls')),
     path('profile/', include('myapp.profile.urls')),
     path('search/', include('myapp.elastic_search.urls')),
     path('logout/', include('myapp.logout.urls')),
     path('video-call/', include('myapp.video_call.urls')),
     path('video/', include('myapp.profile.video.urls')),
     path('chat/', include('myapp.chat.urls')),
-    path('Tweet/', include('myapp.profile.tweet.urls')),  # Fixed missing parenthesis
-    path('Voice_messaging/', include('myapp.voice_message.urls')),  # Fixed capitalization and missing parenthesis
-    path('live_app/', include('myapp.go_live.urls')),
-    path("", include('myapp.file_upload.urls')),  # Fixed capitalization of 'imclude'
-    path("", include('myapp.wallet.urls')),
-    path("", include('myapp.authentication.urls')), 
-    path("", include('myapp.profile.tweet.mentions.urls')),
-    path("", include('myapp.profile.tweet.trend_views.urls')),
-    path("",include('myapp.comment.urls')),
-    path(":", include('myapp.profile.video.video_streaming.urls')),
+    path('tweet/', include('myapp.profile.tweet.urls')),  # Lowercase "tweet" for consistency
+    path('voice-messaging/', include('myapp.voice_message.urls')),
+    path('live-app/', include('myapp.go_live.urls')),
+    path('file-upload/', include('myapp.file_upload.urls')),
+    path('wallet/', include('myapp.wallet.urls')),
+    path('sign-in/', include('myapp.authentication.urls')),  # <-- Correct spelling and trailing slash!
+    path('mentions/', include('myapp.profile.tweet.mentions.urls')),
+    path('trends/', include('myapp.profile.tweet.trend_views.urls')),
+    path('comments/', include('myapp.comment.urls')),
+    path('video-streaming/', include('myapp.profile.video.video_streaming.urls')),
     path('image/', include('myapp.profile.Image.urls')),
 ]
 

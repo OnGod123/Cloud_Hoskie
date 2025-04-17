@@ -98,6 +98,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+LOGIN_URL = '/sign-in/'
 LOGIN_REDIRECT_URL = '/home/'  # Redirect to home page after login
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
 
