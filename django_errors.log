@@ -8942,3 +8942,10 @@ INFO 2025-01-15 11:59:12,669 autoreload Watching for file changes with StatReloa
 INFO 2025-01-15 12:37:51,899 autoreload C:\Users\vincent\Cloud_Hoskie\myapp\profile\video\video_streaming\urls.py changed, reloading.
 INFO 2025-01-15 12:37:59,991 autoreload Watching for file changes with StatReloader
 INFO 2025-01-15 12:53:14,546 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 05:00:07,548 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 05:05:26,960 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 05:08:50,001 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 05:12:58,144 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 06:40:30,751 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 11:05:09,444 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 11:08:20,226 autoreload Watching for file changes with StatReloader

@@ -7,7 +7,12 @@ from .models import User_login
 from myapp.models import Person
 from django.core.files.base import ContentFile
 from deepface import DeepFace  # Import DeepFace for image comparison
+from django.shortcuts import render, redirect
+from myapp.utils.rate_limit import rate_limit_view
 
+
+
+@rate_limit_view(limit=5, window=60, prefix="login")
 def login_view(request):
     if request.method == 'GET':
         # Render the login page
