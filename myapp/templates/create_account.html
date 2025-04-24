@@ -1,0 +1,47 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+</head>
+<body>
+  <h1>Create Account</h1>
+
+  {% if error %}
+    <div style="color: red;">{{ error }}</div>
+  {% endif %}
+
+  <form method="post" action="{% url 'create_account' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label for="id_name">Name:</label><br>
+    <input type="text" id="id_name" name="name" value="{{ form_data.name|default_if_none:'' }}" required><br><br>
+
+    <label for="id_relationship_status">Relationship Status:</label><br>
+    <input type="text" id="id_relationship_status" name="relationship_status" value="{{ form_data.relationship_status|default_if_none:'' }}" required><br><br>
+
+    <label for="id_sexual_orientation">Sexual Orientation:</label><br>
+    <input type="text" id="id_sexual_orientation" name="sexual_orientation" value="{{ form_data.sexual_orientation|default_if_none:'' }}" required><br><br>
+
+    <label for="id_race">Race:</label><br>
+    <input type="text" id="id_race" name="race" value="{{ form_data.race|default_if_none:'' }}" required><br><br>
+
+    <label for="id_phone_number">Phone Number:</label><br>
+    <input type="tel" id="id_phone_number" name="phone_number" value="{{ form_data.phone_number|default_if_none:'' }}" required><br><br>
+
+    <label for="id_social_media_api">Social Media API:</label><br>
+    <input type="text" id="id_social_media_api" name="social_media_api" value="{{ form_data.social_media_api|default_if_none:'' }}" required><br><br>
+
+    <label for="id_birth_date">Birth Date:</label><br>
+    <input type="date" id="id_birth_date" name="birth_date" value="{{ form_data.birth_date|default_if_none:'' }}" required><br><br>
+
+    <label for="id_email">Email:</label><br>
+    <input type="email" id="id_email" name="email" value="{{ form_data.email|default_if_none:'' }}" required><br><br>
+
+    <label for="id_password">Password:</label><br>
+    <input type="password" id="id_password" name="password" required><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
+

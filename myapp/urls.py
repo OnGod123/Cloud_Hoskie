@@ -5,7 +5,7 @@ from myapp.views import home, create_account
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('create_account/', create_account, name='submit'),
+    path('create_account/', create_account, name='create_account'),
     path('', RedirectView.as_view(url='/home', permanent=False)),
     path('home', home, name='home'),
     path('login/facebook/', include('allauth.socialaccount.urls')),  # Using allauth URLs directly

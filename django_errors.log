@@ -9242,3 +9242,328 @@ WARNING 2025-04-17 14:39:52,331 runserver [33mHTTP GET /sign-in/?next=/logout/ 
 INFO 2025-04-17 14:55:48,099 autoreload Watching for file changes with StatReloader
 INFO 2025-04-17 14:56:06,043 runserver [mHTTP GET /sign-in/?next=/logout/ 200 [0.12, 127.0.0.1:40744][0m
 INFO 2025-04-17 14:56:06,981 runserver [mHTTP GET /sign-in/?next=/logout/ 200 [0.15, 127.0.0.1:40744][0m
+INFO 2025-04-17 15:10:23,725 autoreload Watching for file changes with StatReloader
+INFO 2025-04-17 15:10:35,463 runserver [mHTTP GET /sign-in/?next=/logout/ 200 [0.03, 127.0.0.1:40756][0m
+INFO 2025-04-23 21:08:39,486 autoreload Watching for file changes with StatReloader
+INFO 2025-04-23 21:09:34,225 runserver [mHTTP GET /create_account/ 200 [0.05, 127.0.0.1:35508][0m
+WARNING 2025-04-23 21:09:34,657 log Not Found: /favicon.ico
+WARNING 2025-04-23 21:09:34,658 runserver [33mHTTP GET /favicon.ico 404 [0.06, 127.0.0.1:35512][0m
+INFO 2025-04-23 21:09:40,338 runserver [mHTTP GET /create_account/ 200 [0.01, 127.0.0.1:35514][0m
+INFO 2025-04-23 21:09:41,952 runserver [mHTTP GET /create_account/ 200 [0.01, 127.0.0.1:35514][0m
+INFO 2025-04-23 21:09:42,293 runserver [mHTTP GET /create_account/ 200 [0.01, 127.0.0.1:35514][0m
+INFO 2025-04-23 21:09:42,832 runserver [mHTTP GET /create_account/ 200 [0.01, 127.0.0.1:35514][0m
+INFO 2025-04-23 21:09:43,123 runserver [mHTTP GET /create_account/ 200 [0.01, 127.0.0.1:35514][0m
+INFO 2025-04-23 21:15:02,675 runserver [mHTTP GET /create_account/ 200 [0.07, 127.0.0.1:35518][0m
+WARNING 2025-04-23 21:16:49,014 log Not Found: /home/
+WARNING 2025-04-23 21:16:49,016 runserver [33mHTTP GET /home/ 404 [0.16, 127.0.0.1:35522][0m
+INFO 2025-04-23 21:20:35,164 runserver [mHTTP GET /home 200 [0.16, 127.0.0.1:35526][0m
+INFO 2025-04-23 21:20:43,504 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35530][0m
+INFO 2025-04-23 21:20:44,862 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35530][0m
+INFO 2025-04-23 21:20:45,292 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:45,698 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:46,024 runserver [mHTTP GET /home 200 [0.04, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:46,235 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:46,523 runserver [mHTTP GET /home 200 [0.03, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:46,955 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:47,189 runserver [mHTTP GET /home 200 [0.04, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:47,446 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:48,118 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:48,297 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:48,521 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:48,833 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:49,303 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:20:49,821 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35534][0m
+INFO 2025-04-23 21:21:01,802 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35538][0m
+INFO 2025-04-23 21:21:06,028 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35538][0m
+INFO 2025-04-23 21:21:12,146 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35542][0m
+INFO 2025-04-23 21:21:39,665 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35546][0m
+INFO 2025-04-23 21:21:48,652 runserver [mHTTP GET /home 200 [0.03, 127.0.0.1:35550][0m
+INFO 2025-04-23 21:21:49,522 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35550][0m
+INFO 2025-04-23 21:21:49,786 runserver [mHTTP GET /home 200 [0.03, 127.0.0.1:35550][0m
+INFO 2025-04-23 21:21:50,207 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:50,452 runserver [mHTTP GET /home 200 [0.02, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:50,694 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:50,926 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:51,176 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:51,488 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:52,000 runserver [mHTTP GET /home 200 [0.03, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:52,246 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:52,506 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:21:52,750 runserver [mHTTP GET /home 200 [0.01, 127.0.0.1:35554][0m
+INFO 2025-04-23 21:48:15,376 autoreload Watching for file changes with StatReloader
+INFO 2025-04-23 21:50:12,206 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-23 21:50:33,218 log Internal Server Error: /create_account/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/views.py", line 34, in create_account
+    for person in people_page:
+  File "/usr/lib/python3.8/_collections_abc.py", line 874, in __iter__
+    v = self[i]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/paginator.py", line 188, in __getitem__
+    self.object_list = list(self.object_list)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1162, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 513, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 55, in pre_sql_setup
+    self.setup_query()
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 46, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 248, in get_select
+    related_klass_infos = self.get_related_selections(select)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 985, in get_related_selections
+    raise FieldError(
+django.core.exceptions.FieldError: Invalid field name(s) given in select_related: 'profile'. Choices are: wallet
+ERROR 2025-04-23 21:50:33,226 runserver [35;1mHTTP GET /create_account/ 500 [0.11, 127.0.0.1:35564][0m
+INFO 2025-04-24 04:16:58,514 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-24 04:18:30,412 log Internal Server Error: /create_account/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/views.py", line 84, in create_account
+    return render(request, 'create_account.html')
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_account' not found. 'create_account' is not a valid view function or pattern name.
+ERROR 2025-04-24 04:18:30,427 runserver [35;1mHTTP GET /create_account/ 500 [0.22, 127.0.0.1:35568][0m
+INFO 2025-04-24 04:27:55,735 autoreload Watching for file changes with StatReloader
+INFO 2025-04-24 04:28:07,261 runserver [mHTTP GET /create_account/ 200 [0.05, 127.0.0.1:35572][0m
+INFO 2025-04-24 04:28:13,509 runserver [mHTTP GET /create_account/ 200 [0.03, 127.0.0.1:35576][0m
+INFO 2025-04-24 04:31:20,215 runserver [mHTTP POST /create_account/ 200 [1.14, 127.0.0.1:35584][0m
+INFO 2025-04-24 04:35:15,747 runserver [mHTTP GET /create_account/ 200 [0.09, 127.0.0.1:35588][0m
+INFO 2025-04-24 04:36:49,058 runserver [32mHTTP GET /login/facebook/ 302 [0.16, 127.0.0.1:35592][0m
+ERROR 2025-04-24 04:36:49,115 rate_limit Redis error in rate_limit_view
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 38, in _wrapped
+    count = redis_client.incr(key)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/commands/core.py", line 1946, in incrby
+    return self.execute_command("INCRBY", name, amount)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-04-24 04:36:49,461 runserver [mHTTP GET /sign-in/?next=/login/facebook/ 200 [0.40, 127.0.0.1:35592][0m
+ERROR 2025-04-24 04:36:49,622 rate_limit Redis error in rate_limit_view
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 38, in _wrapped
+    count = redis_client.incr(key)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/commands/core.py", line 1946, in incrby
+    return self.execute_command("INCRBY", name, amount)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-04-24 04:36:49,647 runserver [mHTTP GET /sign-in/?next=/login/facebook/ 200 [0.08, 127.0.0.1:35592][0m
+INFO 2025-04-24 04:37:28,379 runserver [32mHTTP GET /login/gmail/ 302 [0.02, 127.0.0.1:35600][0m
+ERROR 2025-04-24 04:37:28,410 rate_limit Redis error in rate_limit_view
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 38, in _wrapped
+    count = redis_client.incr(key)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/commands/core.py", line 1946, in incrby
+    return self.execute_command("INCRBY", name, amount)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-04-24 04:37:28,426 runserver [mHTTP GET /sign-in/?next=/login/gmail/ 200 [0.02, 127.0.0.1:35600][0m
+ERROR 2025-04-24 04:37:28,514 rate_limit Redis error in rate_limit_view
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 38, in _wrapped
+    count = redis_client.incr(key)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/commands/core.py", line 1946, in incrby
+    return self.execute_command("INCRBY", name, amount)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-04-24 04:37:28,528 runserver [mHTTP GET /sign-in/?next=/login/gmail/ 200 [0.02, 127.0.0.1:35600][0m
+INFO 2025-04-24 04:37:51,763 runserver [32mHTTP GET /login/instagram/ 302 [0.02, 127.0.0.1:35610][0m
+ERROR 2025-04-24 04:37:51,791 rate_limit Redis error in rate_limit_view
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 38, in _wrapped
+    count = redis_client.incr(key)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/commands/core.py", line 1946, in incrby
+    return self.execute_command("INCRBY", name, amount)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-04-24 04:37:51,801 runserver [mHTTP GET /sign-in/?next=/login/instagram/ 200 [0.03, 127.0.0.1:35610][0m
+ERROR 2025-04-24 04:37:51,911 rate_limit Redis error in rate_limit_view
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vincent/Cloud_Hoskie/myapp/utils/rate_limit.py", line 38, in _wrapped
+    count = redis_client.incr(key)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/commands/core.py", line 1946, in incrby
+    return self.execute_command("INCRBY", name, amount)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+INFO 2025-04-24 04:37:51,921 runserver [mHTTP GET /sign-in/?next=/login/instagram/ 200 [0.03, 127.0.0.1:35610][0m

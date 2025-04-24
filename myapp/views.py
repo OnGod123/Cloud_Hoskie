@@ -4,7 +4,8 @@ from .models import Person
 from .emails import send_welcome_email
 import logging
 from django.contrib.auth.models import User
-# Set up logging
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 logger = logging.getLogger(__name__)
 
@@ -14,6 +15,9 @@ def home(request):
         return render(request, 'home.html')
     else:
         return HttpResponse('Invalid request method.')
+
+
+logger = logging.getLogger(__name__)
 
 def create_account(request):
     if request.method == 'POST':
@@ -34,7 +38,7 @@ def create_account(request):
             return HttpResponse('All fields are required.')
 
         # Save the data to the database
-        person = Person.object.create(
+        person = Person.objects.create(            # ← objects, not object
             name=name,
             relationship_status=relationship_status,
             sexual_orientation=sexual_orientation,
@@ -46,13 +50,15 @@ def create_account(request):
             password=password
         )
 
-        user = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=email, password=password)
         try:
             person.save()
             logger.info(f"Successfully saved person: {person.name}")
         except Exception as e:
             logger.error(f"Error saving person: {e}")
-            return HttpResponse('An error occurred while processing your registration. Please try again later.')
+            return HttpResponse(
+                'An error occurred while processing your registration. Please try again later.'
+            )
 
         try:
             # Send welcome email to the user
@@ -60,14 +66,22 @@ def create_account(request):
             logger.info(f"Welcome email sent to {person.email}")
         except RuntimeError as e:
             logger.error(f"Error sending email: {e}")
-            return HttpResponse('An error occurred while sending the welcome email. Please try again later.')
+            return HttpResponse(
+                'An error occurred while sending the welcome email. Please try again later.'
+            )
         except Exception as e:
             logger.error(f"Unexpected error sending email: {e}")
-            return HttpResponse('An unexpected error occurred while sending the welcome email. Please try again later.')
+            return HttpResponse(
+                'An unexpected error occurred while sending the welcome email. Please try again later.'
+            )
 
-        return HttpResponse(f'Name: {name}, Email: {email}, Registration Successful. Check your email for a welcome message.')
+        return HttpResponse(
+            f'Name: {name}, Email: {email}, Registration Successful. '
+            'Check your email for a welcome message.'
+        )
     else:
-        return HttpResponse('Invalid request method.')
+        # GET → show the HTML form
+        return render(request, 'create_account.html')
 
 
 from django.http import JsonResponse
