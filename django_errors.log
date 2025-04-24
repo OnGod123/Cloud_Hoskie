@@ -9567,3 +9567,32 @@ Traceback (most recent call last):
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
 INFO 2025-04-24 04:37:51,921 runserver [mHTTP GET /sign-in/?next=/login/instagram/ 200 [0.03, 127.0.0.1:35610][0m
+INFO 2025-04-24 11:02:41,286 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-24 11:03:45,493 log Not Found: /trend
+WARNING 2025-04-24 11:03:45,496 runserver [33mHTTP GET /trend 404 [0.13, 127.0.0.1:35636][0m
+WARNING 2025-04-24 11:04:00,479 log Not Found: /trends
+WARNING 2025-04-24 11:04:00,480 runserver [33mHTTP GET /trends 404 [0.03, 127.0.0.1:35640][0m
+WARNING 2025-04-24 11:04:03,021 log Not Found: /trends
+WARNING 2025-04-24 11:04:03,022 runserver [33mHTTP GET /trends 404 [0.03, 127.0.0.1:35640][0m
+WARNING 2025-04-24 11:04:04,798 log Not Found: /trends
+WARNING 2025-04-24 11:04:04,800 runserver [33mHTTP GET /trends 404 [0.02, 127.0.0.1:35640][0m
+WARNING 2025-04-24 11:04:09,181 log Not Found: /trends
+WARNING 2025-04-24 11:04:09,182 runserver [33mHTTP GET /trends 404 [0.02, 127.0.0.1:35644][0m
+WARNING 2025-04-24 11:04:16,373 log Not Found: /trends
+WARNING 2025-04-24 11:04:16,376 runserver [33mHTTP GET /trends 404 [0.03, 127.0.0.1:35648][0m
+WARNING 2025-04-24 11:08:39,205 log Not Found: /trends/
+WARNING 2025-04-24 11:08:39,213 runserver [33mHTTP GET /trends/ 404 [0.09, 127.0.0.1:35652][0m
+WARNING 2025-04-24 11:08:53,579 log Not Found: /trends/
+WARNING 2025-04-24 11:08:53,581 runserver [33mHTTP GET /trends/ 404 [0.04, 127.0.0.1:35656][0m
+INFO 2025-04-24 11:41:05,373 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-24 11:41:48,285 views Redis error in clear_redis_if_needed: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-04-24 11:41:48,285 views Redis error in process_trends: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-04-24 11:41:48,286 views Redis error in get method: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-04-24 11:41:48,300 log Service Unavailable: /trends/
+ERROR 2025-04-24 11:41:48,302 runserver [35;1mHTTP GET /trends/ 503 [0.05, 127.0.0.1:35660][0m
+INFO 2025-04-24 11:41:54,167 runserver [32mHTTP GET /trends 301 [0.14, 127.0.0.1:35668][0m
+ERROR 2025-04-24 11:41:54,730 views Redis error in clear_redis_if_needed: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-04-24 11:41:54,731 views Redis error in process_trends: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-04-24 11:41:54,731 views Redis error in get method: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-04-24 11:41:54,776 log Service Unavailable: /trends/
+ERROR 2025-04-24 11:41:54,779 runserver [35;1mHTTP GET /trends/ 503 [0.11, 127.0.0.1:35668][0m
