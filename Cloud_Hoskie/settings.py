@@ -197,7 +197,7 @@ else:
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
     EMAIL_HOST_USER = 'fantasiaorg531@gmail.com'  # Replace with your actual email address
-    EMAIL_HOST_PASSWORD = '***grizzy_bear123#'  # Replace with your email password or app-specific password
+    EMAIL_HOST_PASSWORD = 'dmov yzic vbtl fkbo'  # Replace with your email password or app-specific password
 
 
 
