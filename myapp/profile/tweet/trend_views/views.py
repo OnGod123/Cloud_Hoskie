@@ -4,10 +4,11 @@ from myapp.profile.tweet.tweet_models import Tweet
 import redis
 import time
 import logging
+from django_redis import get_redis_connection
 from django.db import DatabaseError
 
 # Redis setup
-redis_client = redis.StrictRedis("default")
+redis_client = get_redis_connection("default")
 
 # Setup logging
 logger = logging.getLogger(__name__)
