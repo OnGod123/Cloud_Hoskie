@@ -9620,3 +9620,77 @@ INFO 2025-04-30 13:34:04,063 runserver [mHTTP GET /trends/ 200 [0.04, 127.0.0.1
 INFO 2025-04-30 13:34:07,200 runserver [mHTTP GET /trends/ 200 [0.02, 127.0.0.1:50832][0m
 INFO 2025-04-30 13:34:09,842 runserver [mHTTP GET /trends/ 200 [0.01, 127.0.0.1:50832][0m
 INFO 2025-04-30 13:55:18,880 runserver [mHTTP GET /trends/ 200 [0.40, 127.0.0.1:50842][0m
+INFO 2025-05-01 06:10:53,094 autoreload Watching for file changes with StatReloader
+WARNING 2025-05-01 06:11:31,199 log Not Found: /video-streaming
+WARNING 2025-05-01 06:11:31,201 runserver [33mHTTP GET /video-streaming 404 [0.06, 127.0.0.1:50860][0m
+INFO 2025-05-01 06:15:11,545 autoreload Watching for file changes with StatReloader
+ERROR 2025-05-01 06:15:51,188 log Internal Server Error: /video-streaming/video-streaming/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/profile/video/video_streaming/views.py", line 9, in video_stream_view
+    return render(request, 'video_stream.html')
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: video_stream.html
+ERROR 2025-05-01 06:15:51,195 runserver [35;1mHTTP GET /video-streaming/video-streaming/ 500 [0.12, 127.0.0.1:50864][0m
+INFO 2025-05-01 06:22:40,162 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 06:22:59,809 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.11, 127.0.0.1:50870][0m
+INFO 2025-05-01 06:23:00,255 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50876]
+INFO 2025-05-01 06:23:00,525 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50876]
+INFO 2025-05-01 06:34:14,433 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 06:34:30,055 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.03, 127.0.0.1:50878][0m
+INFO 2025-05-01 06:34:30,550 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50882]
+INFO 2025-05-01 06:34:31,278 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50882]
+INFO 2025-05-01 06:34:32,424 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.02, 127.0.0.1:50884][0m
+INFO 2025-05-01 06:34:32,765 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50888]
+INFO 2025-05-01 06:34:33,291 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50888]
+INFO 2025-05-01 06:34:33,486 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.04, 127.0.0.1:50884][0m
+INFO 2025-05-01 06:34:33,719 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.01, 127.0.0.1:50884][0m
+INFO 2025-05-01 06:34:34,080 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50890]
+INFO 2025-05-01 06:34:34,175 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.01, 127.0.0.1:50884][0m
+INFO 2025-05-01 06:34:34,204 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50890]
+INFO 2025-05-01 06:34:34,375 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.01, 127.0.0.1:50884][0m
+INFO 2025-05-01 06:34:34,739 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50892]
+INFO 2025-05-01 06:34:35,294 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50892]
+INFO 2025-05-01 06:41:26,782 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 06:41:45,279 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.07, 127.0.0.1:50896][0m
+INFO 2025-05-01 06:41:45,811 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50900]
+INFO 2025-05-01 06:41:46,261 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50900]
+INFO 2025-05-01 06:41:47,142 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.02, 127.0.0.1:50902][0m
+INFO 2025-05-01 06:41:47,511 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50906]
+INFO 2025-05-01 06:41:47,679 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.02, 127.0.0.1:50902][0m
+INFO 2025-05-01 06:41:47,705 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50906]
+INFO 2025-05-01 06:41:48,045 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50908]
+INFO 2025-05-01 06:41:48,265 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50908]
+INFO 2025-05-01 06:48:55,186 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 06:51:25,000 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 06:51:38,243 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.07, 127.0.0.1:50910][0m
+INFO 2025-05-01 06:51:38,739 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50914]
+INFO 2025-05-01 06:51:38,746 runserver WebSocket CONNECT /ws/video-stream/ [127.0.0.1:50914]
+INFO 2025-05-01 06:51:59,387 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.02, 127.0.0.1:50916][0m
+INFO 2025-05-01 06:51:59,406 runserver WebSocket DISCONNECT /ws/video-stream/ [127.0.0.1:50914]
+INFO 2025-05-01 06:51:59,753 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50920]
+INFO 2025-05-01 06:51:59,767 runserver WebSocket CONNECT /ws/video-stream/ [127.0.0.1:50920]
+INFO 2025-05-01 07:01:27,489 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 07:01:43,083 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.03, 127.0.0.1:50922][0m
+INFO 2025-05-01 07:01:43,661 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50926]
+INFO 2025-05-01 07:01:43,670 runserver WebSocket CONNECT /ws/video-stream/ [127.0.0.1:50926]
+INFO 2025-05-01 07:04:09,563 autoreload Watching for file changes with StatReloader
+INFO 2025-05-01 07:04:25,432 runserver [mHTTP GET /video-streaming/video-streaming/ 200 [0.04, 127.0.0.1:50930][0m
+INFO 2025-05-01 07:04:25,912 runserver WebSocket HANDSHAKING /ws/video-stream/ [127.0.0.1:50934]
+INFO 2025-05-01 07:04:25,920 runserver WebSocket CONNECT /ws/video-stream/ [127.0.0.1:50934]
