@@ -6,7 +6,7 @@ from myapp.profile.video.videos_model import Video
 import base64
 
 def video_stream_view(request):
-    return render(request, 'video_stream.html')
+    return render(request, 'stream.html')
 
 @csrf_exempt
 def share_video(request, video_id):

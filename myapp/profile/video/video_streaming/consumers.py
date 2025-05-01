@@ -13,7 +13,7 @@ class VideoStreamConsumer(AsyncWebsocketConsumer):
         # Handle disconnection logic (if any)
         pass
 
-    async def receive(self, text_data):
+    async def receive(self, text_data=None, bytes_data=None):
         """
         Stream all videos from the database with metadata.
         """
