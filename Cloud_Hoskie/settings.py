@@ -85,10 +85,6 @@ INSTALLED_APPS = [
 
 
 ASGI_APPLICATION = 'myapp.asgi.application'
-ASGI_APPLICATION = 'myapp.chat.asgi.application'
-ASGI_APPLICATION = 'myapp.voice_message.asgi.application'
-ASGI_APPLICATION = 'myapp.go_live.asgi.application'
-ASGI_APPLLICATION = 'myapp.upload_file.asgi.application'
 
 
 
