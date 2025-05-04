@@ -23,6 +23,9 @@ urlpatterns = [
     path('comments/', include('myapp.comment.urls')),
     path('video-streaming/', include('myapp.profile.video.video_streaming.urls')),
     path('image/', include('myapp.profile.Image.urls')),
+    path('create/', include('myapp.create_communities.urls')),
+    path("create_friends", include('myapp.followers.urls')),
+    path('', include('myapp.connections.urls')),
 ]
 
 if settings.DEBUG:

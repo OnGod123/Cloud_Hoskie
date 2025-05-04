@@ -9699,3 +9699,767 @@ INFO 2025-05-02 05:12:01,596 autoreload Watching for file changes with StatReloa
 INFO 2025-05-02 05:16:17,047 autoreload Watching for file changes with StatReloader
 INFO 2025-05-02 05:18:24,348 autoreload Watching for file changes with StatReloader
 INFO 2025-05-02 05:22:55,911 autoreload Watching for file changes with StatReloader
+INFO 2025-05-03 15:59:26,035 autoreload Watching for file changes with StatReloader
+INFO 2025-05-03 16:01:15,819 runserver [mHTTP GET /search/ 200 [0.05, 127.0.0.1:37324][0m
+WARNING 2025-05-03 16:01:16,865 log Not Found: /favicon.ico
+WARNING 2025-05-03 16:01:16,868 runserver [33mHTTP GET /favicon.ico 404 [0.08, 127.0.0.1:37324][0m
+ERROR 2025-05-03 16:01:20,954 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfee76400>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfee0e4f0>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:20,994 runserver [35;1mHTTP GET /search/?username_input=h&offset=0&page_size=10 500 [0.16, 127.0.0.1:37328][0m
+ERROR 2025-05-03 16:01:21,062 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfed8f2b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfed4ac10>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:21,069 runserver [35;1mHTTP GET /search/?username_input=he&offset=0&page_size=10 500 [0.12, 127.0.0.1:37338][0m
+ERROR 2025-05-03 16:01:21,319 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfeef1b20>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfee28490>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:21,339 runserver [35;1mHTTP GET /search/?username_input=hel&offset=0&page_size=10 500 [0.10, 127.0.0.1:37338][0m
+ERROR 2025-05-03 16:01:21,464 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfedcc100>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfee16430>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:21,489 runserver [35;1mHTTP GET /search/?username_input=hell&offset=0&page_size=10 500 [0.13, 127.0.0.1:37338][0m
+ERROR 2025-05-03 16:01:21,636 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfeead3a0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfeead2b0>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:21,658 runserver [35;1mHTTP GET /search/?username_input=hello&offset=0&page_size=10 500 [0.17, 127.0.0.1:37328][0m
+ERROR 2025-05-03 16:01:23,883 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfedb1760>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfedb1c40>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:23,902 runserver [35;1mHTTP GET /search/?username_input=hell&offset=0&page_size=10 500 [0.10, 127.0.0.1:37328][0m
+ERROR 2025-05-03 16:01:24,022 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfee5faf0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfee82be0>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:24,033 runserver [35;1mHTTP GET /search/?username_input=hel&offset=0&page_size=10 500 [0.09, 127.0.0.1:37328][0m
+ERROR 2025-05-03 16:01:24,160 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfee28550>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfee28f70>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:24,165 runserver [35;1mHTTP GET /search/?username_input=he&offset=0&page_size=10 500 [0.07, 127.0.0.1:37328][0m
+ERROR 2025-05-03 16:01:24,347 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfda6a340>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfeee84f0>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:24,352 runserver [35;1mHTTP GET /search/?username_input=h&offset=0&page_size=10 500 [0.08, 127.0.0.1:37328][0m
+ERROR 2025-05-03 16:01:24,521 log Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/home/vincent/.local/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3cfeef1be0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 38, in inner
+    response = await get_response(request)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 233, in _get_response_async
+    response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/django/views/decorators/http.py", line 40, in inner
+    return func(request, *args, **kwargs)
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 133, in get_profiles
+    for batch in autocomplete_username_search(username_input, page_size=page_size):
+  File "/home/vincent/Cloud_Hoskie/myapp/elastic_search/views.py", line 158, in autocomplete_username_search
+    results = query.execute()
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/dsl/_sync/search.py", line 97, in execute
+    es.search(index=self._index, body=self.to_dict(), **self._params)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 452, in wrapped
+    return api(*args, **kwargs)
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 5131, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 315, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/home/vincent/.local/lib/python3.8/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3cfee454f0>: Failed to establish a new connection: [Errno 111] Connection refused))
+ERROR 2025-05-03 16:01:24,526 runserver [35;1mHTTP GET /search/?username_input=&offset=0&page_size=10 500 [0.08, 127.0.0.1:37328][0m

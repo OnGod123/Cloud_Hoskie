@@ -1,4 +1,10 @@
-# Community Views
+from django.http import JsonResponse, HttpResponseForbidden, HttpResponseBadRequest
+from django.utils.decorators import method_decorator
+from django.views import View
+import json
+from .models import Community, Tweet, Person
+
+
 @method_decorator(csrf_exempt, name='dispatch')
 class CommunityView(View):
     def get(self, request, community_id=None):
@@ -161,12 +167,13 @@ class RetweetView(View):
             return JsonResponse({'error': 'Community not found'}, status=404)
         except Exception as e:
             return HttpResponseBadRequest(str(e))
-'
+
 from django.http import JsonResponse, HttpResponseForbidden, HttpResponseBadRequest
 from django.utils.decorators import method_decorator
 from django.views import View
 import json
 from .models import Community, Tweet, Person
+
 
 
 @method_decorator(csrf_exempt, name='dispatch')
