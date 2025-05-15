@@ -182,6 +182,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SESSION_HISTORY_MAX_LENGTH = 20
+
 
 if DEBUG:
     # Use Django's console email backend for development (emails are printed in the console)

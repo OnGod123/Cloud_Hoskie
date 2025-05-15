@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import uuid
+from myapp.models import Person
 
 class Community(models.Model):
     id = models.AutoField(primary_key=True)

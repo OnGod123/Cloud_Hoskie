@@ -1,7 +1,7 @@
 from django.db import models
 from myapp.profile.tweet.tweet_models import Tweet
 
-class Comment(models.Model):
+class _Comment(models.Model):
     tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE, related_name="comments")  # Reference to Tweet
     person = models.ForeignKey('Person', on_delete=models.CASCADE)  # Reference to Person (who made the comment)
     content = models.TextField()  # Comment content

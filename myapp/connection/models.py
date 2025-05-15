@@ -4,7 +4,7 @@ from myapp.models import Person
 from django.utils.timezone import now
 from datetime import timedelta
 from myapp.wallet.models import Payment, UserWallet
-import request
+import requests
 
 
 class ConnectionLogic(models.Model):

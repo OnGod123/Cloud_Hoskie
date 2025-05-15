@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- meta, title, CSS links, etc. -->
+</head>
+<body>
+  {% block content %}{% endblock %}
+
+  <!-- Global AJAX & Session Navigation Script -->
+<script>
+(function() {
+  // CSRF helper
+  function getCookie(name) {
+    let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+  }
+  const csrftoken = getCookie('csrftoken');
+
+  // -- CORE NAVIGATION HELPERS --
+
+  function ajaxNavigate(url, replace) {
+    fetch(url, {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRFToken': csrftoken
+      }
+    })
+    .then(r => {
+      if (!r.ok) throw new Error(r.statusText);
+      return r.text();
+    })
+    .then(html => {
+      document.getElementById('main-content').innerHTML = html;
+      const state = { method: 'GET', url: url };
+      if (replace) {
+        history.replaceState(state, '', url);
+      } else {
+        history.pushState(state, '', url);
+      }
+    })
+    .catch(err => {
+      console.error('Navigation error:', err);
+      // fallback full reload
+      window.location.href = url;
+    });
+  }
+
+  function ajaxPostAndRender(form) {
+    const url = form.action;
+    const formData = new FormData(form);
+
+    fetch(url, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRFToken': csrftoken,
+      },
+      body: formData
+    })
+    .then(r => {
+      if (!r.ok) throw new Error(r.statusText);
+      return r.text();
+    })
+    .then(html => {
+      document.getElementById('main-content').innerHTML = html;
+      // push POST state with HTML
+      history.pushState(
+        { method: 'POST', url: url, html: html },
+        '',
+        url
+      );
+    })
+    .catch(err => {
+      console.error('POST failed', err);
+      // fallback full reload
+      window.location.href = url;
+    });
+  }
+
+  
+  document.addEventListener('click', function(e) {
+    const a = e.target.closest('a');
+    if (
+      !a ||
+      a.target ||
+      a.origin !== location.origin ||
+      a.hasAttribute('data-no-ajax') ||
+      a.href.includes('csrf') // skip unsafe
+    ) {
+      return;
+    }
+    e.preventDefault();
+    ajaxNavigate(a.href, false);
+  });
+
+  // -- BIND FORM SUBMITS FOR AJAX POST --
+
+  document.addEventListener('submit', function(e) {
+    const form = e.target.closest('form[data-ajax-post]');
+    if (!form) return;
+    e.preventDefault();
+    ajaxPostAndRender(form);
+  });
+
+  // -- POPSTATE HANDLER (BACK/FORWARD) --
+
+  window.addEventListener('popstate', function(event) {
+    const state = event.state || {};
+
+    if (state.method === 'POST' && state.html) {
+      // restore POST result
+      document.getElementById('main-content').innerHTML = state.html;
+      history.replaceState(state, '', state.url);
+    } else if (state.method === 'GET') {
+      // restore GET view
+      ajaxNavigate(state.url, true);
+    } else {
+      // no state (e.g. initial load), do nothing or load current URL
+      ajaxNavigate(location.pathname, true);
+    }
+  });
+
+  // -- INITIALIZE FIRST STATE --
+
+  // on page load, push initial GET state if none
+  if (!history.state) {
+    history.replaceState(
+      { method: 'GET', url: location.pathname },
+      '',
+      location.pathname
+    );
+  }
+
+})();
+</script>
+  </script>
+</body>
+</html>

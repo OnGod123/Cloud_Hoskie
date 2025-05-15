@@ -3,7 +3,9 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.db.models import Q
 import uuid
-from myapp.models import Person, ConnectionLogic, Profile
+from myapp.models import Person 
+from .models import ConnectionLogic
+from myapp.profile.model_profile import Profile
 
 def search_view(request):
     person = Person.objects.get(user=request.user)

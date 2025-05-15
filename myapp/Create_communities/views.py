@@ -3,6 +3,8 @@ from django.utils.decorators import method_decorator
 from django.views import View
 import json
 from .models import Community, Tweet, Person
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators      import method_decorator
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -253,7 +255,7 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from .models import Video, Tweet, Like, Community
-from .forms import VideoForm  # Assuming you'll create a form for video uploads
+
 
 # Video like view
 @method_decorator(csrf_exempt, name='dispatch')
@@ -308,7 +310,7 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from .models import Video, Community
-from .forms import VideoForm  # Assuming you'll create a form for video uploads
+
 
 # Video upload view using class-based view
 @method_decorator(csrf_exempt, name='dispatch')
@@ -322,7 +324,7 @@ class VideoUploadView(View):
             return HttpResponse("You are not a member of this community.", status=403)
 
         # Render the video upload form
-        form = VideoForm()
+        form = Video()
         return render(request, 'upload_video.html', {'form': form, 'community': community})
 
     def post(self, request, community_id):
@@ -334,7 +336,7 @@ class VideoUploadView(View):
             return HttpResponse("You are not a member of this community.", status=403)
 
         # Handle video upload
-        form = VideoForm(request.POST, request.FILES)
+        form = Video(request.POST, request.FILES)
         if form.is_valid():
             # Create the video instance and associate it with the current user and community
             video = form.save(commit=False)

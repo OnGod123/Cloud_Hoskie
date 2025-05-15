@@ -1,13 +1,13 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Comment, Tweet
+from .models import _Comment, Tweet
 from myapp.models import Person
 
 @csrf_exempt
 def comment_view(request, tweet_id):
     if request.method == "GET":
         # Fetch all comments for the specific tweet
-        comments = Comment.objects.filter(tweet__id=tweet_id).select_related('person')
+        comments = _Comment.objects.filter(tweet__id=tweet_id).select_related('person')
         comment_data = [
             {
                 'comment_id': comment.id,
@@ -40,7 +40,7 @@ def comment_view(request, tweet_id):
         try:
             person = request.user.person
             tweet = Tweet.objects.get(id=tweet_id)
-            comment = Comment.objects.create(
+            comment = _Comment.objects.create(
                 tweet=tweet,
                 person=person,
                 content=content
