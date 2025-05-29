@@ -48,3 +48,31 @@ class Person(models.Model):
     def check_password(self, raw_password):
         # Check if the provided password matches the stored hashed password
         return check_password(raw_password, self.password)
+
+
+
+
+from django.conf import settings
+from django.db import models
+from myapp.middleware import get_current_user
+
+class TimeStampedModel(models.Model):
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,          # in case you ever create outside a request
+        editable=False
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True
+
+    def save(self, *args, **kwargs):
+        # only stamp on initial create
+        if not self.pk:
+            user = get_current_user()
+            if user and user.is_authenticated:
+                self.created_by = user
+        super().save(*args, **kwargs)
+

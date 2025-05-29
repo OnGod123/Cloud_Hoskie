@@ -7,3 +7,4 @@ class MyAppConfig(AppConfig):
 
     def ready(self):
         configure_elasticsearch()
+        import myapp.signals

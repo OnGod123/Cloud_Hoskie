@@ -1,0 +1,17 @@
+<!-- templates/notifications/list.html -->
+<h2>Your Notifications</h2>
+
+<ul>
+  {% for note in notifications %}
+    <li>
+      <strong>{{ note.sender.username }}</strong> {{ note.verb }}
+      <br>
+      <small>{{ note.content_object }}</small> <!-- __str__ of the object -->
+      <br>
+      <em>{{ note.timestamp }}</em>
+    </li>
+  {% empty %}
+    <li>No notifications yet.</li>
+  {% endfor %}
+</ul>
+
